@@ -31,6 +31,11 @@ def run() -> dict:
             "gap_sources": sources}
 
 
+def pc(x: float) -> str:
+    """Whole percent, rounding halves up (matches the demo page)."""
+    return f"{int(x * 100 + 0.5)}%"
+
+
 def report(r: dict) -> str:
     lex = r["scenario"]["steps"]
     lines = ["# Service desk gap finder: results", ""]
@@ -49,10 +54,10 @@ def report(r: dict) -> str:
     names = {t["id"]: t["name"] for t in r["scenario"]["topics"]}
     for tid, f in r["found"].items():
         for m in f["missing"]:
-            lines.append(f"- {names[tid]}: add \"{lex[m['step']]}\" (in {m['share']:.0%} of notes; "
-                         f"{m['provider_rate']:.0%} of provider notes, {m['internal_rate']:.0%} of internal notes)")
+            lines.append(f"- {names[tid]}: add \"{lex[m['step']]}\" (in {pc(m['share'])} of notes; "
+                         f"{pc(m['provider_rate'])} of provider notes, {pc(m['internal_rate'])} of internal notes)")
         for o in f["outdated"]:
-            lines.append(f"- {names[tid]}: remove \"{lex[o['step']]}\" (in {o['share']:.0%} of notes)")
+            lines.append(f"- {names[tid]}: remove \"{lex[o['step']]}\" (in {pc(o['share'])} of notes)")
         if not f["has_article"] and f["missing"]:
             lines.append(f"- {names[tid]}: no article today; the steps above become a new one")
     return "\n".join(lines) + "\n"

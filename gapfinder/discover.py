@@ -30,7 +30,7 @@ def discover(history: list[dict], kb: dict) -> dict:
         for h in tickets:
             for i, s in enumerate(h["note_steps"]):
                 pos[s].append(i / max(1, len(h["note_steps"]) - 1))
-            for s in set(h["note_steps"]):
+            for s in dict.fromkeys(h["note_steps"]):
                 seen[s] += 1
                 seen_by[s][h["resolved_by"]] += 1
         article = kb.get(topic)

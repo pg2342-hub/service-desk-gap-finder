@@ -6,7 +6,7 @@ A support desk's knowledge base and its resolved tickets often disagree. The ste
 
 This tool does the two things a first pilot on a desk like that needs:
 
-1. **Find the gaps (week 1).** It reads a year of resolved tickets next to the knowledge base and, topic by topic, lists the steps the article is missing, the steps it should drop, and the one-off steps that should stay an escalation path rather than become the default answer. It also says whether each missing step is written down by both teams or almost only by the provider.
+1. **Find the gaps (week 1).** It reads 6,000 resolved tickets next to the knowledge base and, topic by topic, lists the steps the article is missing, the steps it should drop, and the one-off steps that should stay an escalation path rather than become the default answer. It also says whether each missing step is written down by both teams or mostly by the provider.
 2. **Gate automation (weeks 2 to 4).** It drafts an answer for every pilot ticket from the articles, has a simulated analyst approve or edit each draft, and lets a topic answer on its own only once at least 48 of its last 50 drafts were approved with no edits. Point-of-sale outages, payments and security incidents always go to a person.
 
 It runs the pilot twice, once with the articles as they are and once after the desk lead approves every suggested update, so you can see what the knowledge work alone changes.
@@ -19,7 +19,7 @@ It runs the pilot twice, once with the articles as they are and once after the d
 | Topics that clear the 48 of 50 gate | 3 | 6 |
 | Share of all tickets on cleared topics | 11.9% | 31.5% |
 
-The gap finder suggested 9 updates across 6 topics (8 steps to add, 1 to remove, one of them a whole new article). Three of the missing steps are written down almost only by the provider: in 100% of provider notes for their topic but in 18% to 32% of internal notes.
+The gap finder suggested 9 updates across 6 topics (8 steps to add, 1 to remove, one of them a whole new article). Three of the missing steps are written down mostly by the provider: in 100% of provider notes for their topic but in 18% to 32% of internal notes.
 
 Seven topics still miss the gate after the updates. Six of them score 41 to 47 of 50, because some of their tickets need a one-off step (a hardware swap, a payroll correction, a circuit ticket with the network provider) that the default answer should not promise. The seventh, Laptop running slow at 32 of 50, has too many different causes for one article. All seven stay with an analyst, which is the gate doing its job.
 
@@ -58,4 +58,5 @@ Python 3.9 or later, standard library only. Results go to `reports/results.json`
 - Notes carry tagged steps, so the tool counts steps instead of reading free text. On a real desk, week 1 has to extract those steps from what people wrote, and that is the hard part.
 - The analyst is simulated: a draft is approved only when it has exactly the steps the ticket needed. Real reviewers accept small variations and catch tone, which this does not model.
 - Reopen rates are not modeled, so the gate here is draft quality only. A real pilot would also send a topic back to drafting if its reopen rate rose above its own baseline.
+- The scenario plants the gaps and the tool recovers them. History, pilot tickets and the simulated reviewer all share one ground truth, so approved updates make every article accurate by construction, and which topics clear the gate follows from each topic's one-off rate (48 of 50 needs about 4% or less). The build shows the mechanics, not that they work on a real desk.
 - Every number comes from invented data and settings.

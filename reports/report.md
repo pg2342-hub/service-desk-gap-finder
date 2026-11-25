@@ -50,10 +50,10 @@
 
 - VPN will not connect: add "Reinstall the VPN profile" (in 100% of notes; 100% of provider notes, 100% of internal notes)
 - VPN will not connect: remove "Restart the legacy VPN client service" (in 0% of notes)
-- Password reset: add "Tell the associate to wait 15 minutes for the store devices to sync" (in 68% of notes; 100% of provider notes, 27% of internal notes)
+- Password reset: add "Tell the associate to wait 15 minutes for the store devices to sync" (in 69% of notes; 100% of provider notes, 27% of internal notes)
+- Store printer offline: add "Power cycle the store printer" (in 100% of notes; 100% of provider notes, 100% of internal notes)
 - Store printer offline: add "Confirm the printer kept its reserved IP address" (in 100% of notes; 100% of provider notes, 100% of internal notes)
 - Store printer offline: add "Remove and re-add the printer in the store queue" (in 100% of notes; 100% of provider notes, 100% of internal notes)
-- Store printer offline: add "Power cycle the store printer" (in 100% of notes; 100% of provider notes, 100% of internal notes)
 - Store printer offline: no article today; the steps above become a new one
 - Scheduling app sign-in: add "Relink the associate to their home store ID" (in 69% of notes; 100% of provider notes, 18% of internal notes)
 - Handheld scanner will not pair: add "Reset the scanner to the store profile by scanning the setup barcode" (in 68% of notes; 100% of provider notes, 32% of internal notes)

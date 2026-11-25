@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Service Desk Gap Finder</title>
-<meta name="description" content="Reads a year of resolved service desk tickets next to the knowledge base, lists the fixes that live only in ticket notes, and lets a topic answer on its own only after 48 of its last 50 drafts were approved with no edits.">
+<meta name="description" content="Reads 6,000 resolved service desk tickets next to the knowledge base, lists the fixes that live only in ticket notes, and lets a topic answer on its own only after 48 of its last 50 drafts were approved with no edits.">
 <style>
 .head h1{margin:40px 0 14px}
 .head .lead{max-width:40em}
@@ -140,7 +140,7 @@ button.tile.changed{box-shadow:0 0 0 3px var(--green-wash)}
 <main>
 <div class="head">
 <h1>Service desk gap finder</h1>
-<p class="lead">A support desk's knowledge base and its ticket notes often disagree, and the real fix tends to sit in the notes, often the outside provider's. This tool reads a year of resolved tickets next to the articles, lists every fix the articles are missing, and then applies one gate to every topic: it may answer on its own only after 48 of its last 50 drafted answers were approved with no edits.</p>
+<p class="lead">A support desk's knowledge base and its ticket notes often disagree, and the real fix tends to sit in the notes, often the outside provider's. This tool reads 6,000 resolved tickets next to the articles, lists every fix the articles are missing, and then applies one gate to every topic: it may answer on its own only after 48 of its last 50 drafted answers were approved with no edits.</p>
 </div>
 
 <section class="board" id="board" aria-labelledby="verdict-h">
@@ -153,12 +153,12 @@ button.tile.changed{box-shadow:0 0 0 3px var(--green-wash)}
   </div>
   <div class="vline" aria-live="polite">
     <h2 id="verdict-h"></h2>
-    <div class="share"><b id="sharev"></b><span>of all tickets on cleared topics</span></div>
+    <div class="share"><b id="sharev"></b><span>of all tickets on cleared topics</span><span id="sharealt"></span></div>
     <p id="takeaway"></p>
   </div>
   <div class="tally">
     <div class="stack" id="stack" aria-hidden="true"></div>
-    <p class="stackcap">Every ticket in the year, by topic. Bar widths are to scale; the grey block is one-off tickets outside the named topics.</p>
+    <p class="stackcap">Every ticket in the sample, by topic. Bar widths are to scale; the grey block is one-off tickets outside the named topics.</p>
     <div class="counts" id="counts"></div>
   </div>
   <div class="topics"><div class="tiles" id="tiles"></div></div>
@@ -171,7 +171,7 @@ button.tile.changed{box-shadow:0 0 0 3px var(--green-wash)}
 <h2 id="where">Where the missing fixes live</h2>
 <p class="point" id="wherept"></p>
 <div class="chart" id="chart"></div>
-<p class="note">Each row is one step the articles were missing. The dots show how often that step appears in the provider's notes and in the internal team's notes for the same topic. A wide gap means the fix is only written down by the provider, so it would be lost if the provider changed.</p>
+<p class="note">Each row is one step the articles were missing. The dots show how often that step appears in the provider's notes and in the internal team's notes for the same topic. A wide gap means the fix is written down mostly by the provider, so much of it would be lost if the provider changed.</p>
 
 <h2 id="gaps">Gap list for the desk lead</h2>
 <p class="point" id="gapspt"></p>
@@ -184,7 +184,7 @@ button.tile.changed{box-shadow:0 0 0 3px var(--green-wash)}
 
 <aside class="side" aria-label="About this build">
   <nav aria-label="On this page"><a href="#board">Topic board</a><a href="#where">Where the missing fixes live</a><a href="#gaps">Gap list for the desk lead</a><a href="#rules">The rules</a></nav>
-  <div><h3>Data</h3><p>All tickets, topics, steps and volumes are made up for a fictional retailer's employee IT desk and describe no real company. Each resolution note carries tagged steps, so the tool counts steps rather than reading free text. A simulated analyst approves a draft only when it has exactly the steps that ticket needed.</p></div>
+  <div><h3>Data</h3><p>All tickets, topics, steps and volumes are made up for a fictional retailer's employee IT desk and describe no real company. Each resolution note carries tagged steps, so the tool counts steps rather than reading free text. A simulated analyst approves a draft only when it has exactly the steps that ticket needed. The scenario plants the gaps and the tool recovers them, so the page shows the mechanics, not proof they work on a real desk.</p></div>
   <div><h3>Run it yourself</h3><p>Python 3.9 or later, standard library only. From the repo folder:</p><pre>python3 run.py
 python3 -m unittest
 python3 scripts/build_demo.py</pre></div>
@@ -197,9 +197,9 @@ const D = /*DATA*/null;
 let view = "before", sel = null;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const cls = v => v.replace(/ /g,"-");
-const pct = (x,d=1) => (x*100).toFixed(d).replace(/\.0$/,"")+"%";
+const pct = (x,d=1) => d==0 ? Math.floor(x*100+0.5)+"%" : (Math.floor(x*1000+0.5)/10).toFixed(1).replace(/\.0$/,"")+"%";
 const ORDER = ["AUTO-RESOLVE","KEEP DRAFTING","ALWAYS A PERSON"];
-const MEANS = {"AUTO-RESOLVE":"48 or more of the last 50 drafts approved with no edits","KEEP DRAFTING":"an analyst approves every draft","ALWAYS A PERSON":"point of sale, payments, security"};
+const MEANS = {"AUTO-RESOLVE":"48 or more of the last 50 drafts approved with no edits","KEEP DRAFTING":"an analyst reviews every draft","ALWAYS A PERSON":"point of sale, payments, security"};
 const BADGE = {"AUTO-RESOLVE":"go","KEEP DRAFTING":"partial","ALWAYS A PERSON":"no-go"};
 const CAPS = {before:"Drafts come from the knowledge base as it is today.",
               after:"Drafts come from the knowledge base once the desk lead approves every update on the gap list."};
@@ -224,9 +224,10 @@ function render(){
   document.getElementById("cap").textContent=CAPS[view];
   document.getElementById("verdict-h").textContent=`${V.cleared} of ${drafted} topics can answer on their own`;
   document.getElementById("sharev").textContent=pct(V.cleared_share);
+  document.getElementById("sharealt").textContent= view=="before" ? `${pct(D.views.after.cleared_share)} after approved updates` : `${pct(D.views.before.cleared_share)} with articles as they are`;
   const near=ts.filter(t=>t.verdict=="KEEP DRAFTING"&&t.approved==D.rules.gate_pass-1);
   document.getElementById("takeaway").innerHTML = view=="before"
-    ? `<b>${V.coverage.of-V.coverage.accurate} of ${V.coverage.of} drafted topics have an article that is missing a step, has an outdated one, or does not exist</b>, so their drafts get edited and they stay with an analyst. The day 30 bar is ${pct(V.volume_bar,0)} of tickets on cleared topics.`
+    ? `<b>${V.coverage.of-V.coverage.accurate} of ${V.coverage.of} drafted topics have an article that is missing a step, has an outdated one, or does not exist</b>, so their drafts get edited and they stay with an analyst. Cleared topics are already above the ${pct(V.volume_bar,0)} bar; approved updates take them to ${pct(D.views.after.cleared_share)}.`
     : `<b>Every drafted topic now has an accurate article</b>, and ${V.cleared} topics clear the gate. ${near.length} more (${near.map(t=>esc(t.name)).join(", ")}) miss it by a single draft and stay with an analyst, because some of their tickets need a one-off step no article should promise.`;
   const total=V.total_tickets, tail=total-ts.reduce((a,t)=>a+t.volume,0);
   document.getElementById("stack").innerHTML=ORDER.flatMap(k=>ts.filter(t=>t.verdict==k).map(t=>`<i class="k-${cls(k)}" style="flex-grow:${t.volume}" title="${esc(t.name)}"></i>`)).join("")+`<i class="k-LONG-TAIL" style="flex-grow:${tail}" title="One-off tickets"></i>`;
@@ -252,7 +253,8 @@ function render(){
       <div class="dl"><span><i class="approved"></i>Approved, no edits</span><span><i class="edited"></i>Edited by the analyst</span><span><i class="none"></i>No article, no draft</span></div>`;
   }
   const rows=[];
-  (art||[]).forEach(s=>{
+  const stale=new Set(f.outdated.map(o=>o.step));
+  (art||[]).filter(s=>!stale.has(s)).forEach(s=>{
     const added=view=="after"&&f.missing.some(m=>m.step==s);
     rows.push(`<li><span class="tag ${added?"add":""}">${added?"ADDED":"IN ARTICLE"}</span><span>${esc(L[s])}${added?`<span class="why">Found in ${pct(f.missing.find(m=>m.step==s).share,0)} of this topic's notes.</span>`:""}</span></li>`);
   });
@@ -293,7 +295,7 @@ function drawChart(){
 drawChart(); let rz; addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(drawChart,150)});
 (function(){
   const rows=CROWS, prov=rows.filter(r=>r.lives_in=="provider notes");
-  document.getElementById("wherept").innerHTML=`The gap finder found <b>${rows.length} steps the articles were missing</b>. ${prov.length} of them (${prov.map(r=>esc(NAMES[r.topic])).join(", ")}) are written down almost only by the outside provider, and those topics carry ${pct(prov.reduce((a,r)=>a+D.views.before.topics.find(t=>t.id==r.topic).volume_share,0))} of all tickets.`;
+  document.getElementById("wherept").innerHTML=`The gap finder found <b>${rows.length} steps the articles were missing</b>. ${prov.length} of them (${prov.map(r=>esc(NAMES[r.topic])).join(", ")}) are written down mostly by the outside provider, and those topics carry ${pct(prov.reduce((a,r)=>a+D.views.before.topics.find(t=>t.id==r.topic).volume_share,0))} of all tickets.`;
 })();
 
 (function(){
@@ -302,7 +304,7 @@ drawChart(); let rz; addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeo
   document.getElementById("gapspt").innerHTML=`${n} updates across ${items.length} topics. Each one is a suggestion the desk lead approves or rejects; the desk lead owns every approved update, so the knowledge stays with the company if the provider changes.`;
   document.getElementById("gaplist").innerHTML=items.map(([tid,f])=>`<div class="gt"><h3>${esc(NAMES[tid])}</h3><ul>${
     (f.has_article?"":`<li><span class="tag add">NEW</span><span>No article today; the steps below become one.</span></li>`)+
-    f.missing.map(m=>`<li><span class="tag add">ADD</span><span>${esc(L[m.step])}<span class="why">In ${pct(m.share,0)} of notes; ${m.lives_in=="provider notes"?"written down almost only by the provider":"written down by both teams"}.</span></span></li>`).join("")+
+    f.missing.map(m=>`<li><span class="tag add">ADD</span><span>${esc(L[m.step])}<span class="why">In ${pct(m.share,0)} of notes; ${m.lives_in=="provider notes"?"written down mostly by the provider":"written down by both teams"}.</span></span></li>`).join("")+
     f.outdated.map(o=>`<li><span class="tag remove">REMOVE</span><span>${esc(L[o.step])}<span class="why">In the article but in ${pct(o.share,0)} of notes.</span></span></li>`).join("")
   }</ul></div>`).join("");
   const R=D.rules;
