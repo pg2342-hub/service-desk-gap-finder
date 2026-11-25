@@ -1,0 +1,70 @@
+{
+ "password": [
+  "verify_identity",
+  "reset_password_portal"
+ ],
+ "mfa": [
+  "verify_identity",
+  "remove_old_mfa",
+  "send_mfa_link",
+  "confirm_mfa_signin"
+ ],
+ "schedule": [
+  "check_schedule_license",
+  "clear_app_cache"
+ ],
+ "timeclock": [
+  "manager_approval",
+  "add_punch_wfm"
+ ],
+ "scanner": [
+  "reboot_scanner",
+  "repair_bluetooth"
+ ],
+ "printer": null,
+ "wifi": [
+  "check_ap_status",
+  "restart_ap",
+  "forget_network"
+ ],
+ "newhire": [
+  "check_hr_start_date",
+  "trigger_provisioning"
+ ],
+ "mailbox": [
+  "check_mailbox_owner",
+  "grant_mailbox",
+  "tell_restart_outlook"
+ ],
+ "vpn": [
+  "check_vpn_group",
+  "check_vpn_client",
+  "old_vpn_client"
+ ],
+ "mobilemail": [
+  "check_os_version",
+  "enroll_mdm",
+  "add_mail_profile"
+ ],
+ "teams": [
+  "check_audio_device",
+  "update_teams",
+  "reset_teams_cache"
+ ],
+ "laptop": [
+  "check_disk_space",
+  "check_startup_apps"
+ ],
+ "pos": [
+  "pos_restart_register",
+  "pos_escalate_vendor"
+ ],
+ "cardreader": [
+  "pay_check_reader",
+  "pay_escalate_processor"
+ ],
+ "phish": [
+  "sec_quarantine",
+  "sec_escalate_soc"
+ ]
+}

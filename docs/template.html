@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Desk Gap Finder</title>
+<meta name="description" content="Reads a year of resolved service desk tickets next to the knowledge base, lists the fixes that live only in ticket notes, and lets a topic answer on its own only after 48 of its last 50 drafts were approved with no edits.">
+<style>
+.head h1{margin:40px 0 14px}
+.head .lead{max-width:40em}
+.board{margin:32px 0 0;border:1px solid var(--rule);border-radius:16px;background:#fbfaf6;overflow:hidden;scroll-margin-top:24px}
+.bar-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px 24px;border-bottom:1px solid var(--rule)}
+.seg{display:flex;width:fit-content;max-width:100%;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.seg button{min-height:38px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--ink-2);font:500 15px/1 var(--sans);cursor:pointer;white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-checked=true]{background:var(--ink);color:var(--paper)}
+.cap{margin:0;color:var(--ink-2);font-size:15px}
+.vline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:end;padding:22px 24px 6px}
+.vline h2{all:unset;display:block;font:400 34px/1.1 var(--serif)}
+.vline p{grid-column:1/-1;margin:0;font-size:17px;max-width:46em}
+.share{text-align:right}
+.share b{display:block;font:400 44px/1 var(--serif);font-variant-numeric:tabular-nums}
+.share span{display:block;color:var(--ink-2);font-size:13px;margin-top:4px}
+.tally{padding:18px 24px 22px}
+.stack{display:flex;gap:4px;height:22px}
+.stack i{border-radius:4px;min-width:6px;transition:background-color .3s var(--ease),flex-grow .3s var(--ease)}
+.k-AUTO-RESOLVE{background:var(--green)}
+.k-KEEP-DRAFTING{background:repeating-linear-gradient(135deg,var(--ink) 0 1.5px,transparent 1.5px 6px);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.k-ALWAYS-A-PERSON{background:var(--ink)}
+.k-LONG-TAIL{background:var(--rule-soft);box-shadow:inset 0 0 0 1px var(--rule)}
+.stackcap{margin:8px 0 0;color:var(--ink-2);font-size:13px}
+.counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:14px}
+.counts div{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:baseline}
+.counts b{grid-row:span 2;font:400 36px/1 var(--serif)}
+.counts .lab{display:flex;align-items:center;gap:8px;font:500 13px/1.3 var(--mono);letter-spacing:.04em}
+.counts .lab i{width:12px;height:12px;border-radius:3px;flex:none}
+.counts span:last-child{color:var(--ink-2);font-size:14px;line-height:1.35}
+.counts .zero b{color:var(--ink-2)}
+.topics{border-top:1px solid var(--rule);padding:18px 24px 22px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:10px}
+button.tile{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;min-height:0;padding:0 14px 12px;border:1px solid var(--rule);border-radius:12px;background:var(--paper);color:var(--ink);text-align:left;font:inherit;font-weight:400;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .2s var(--ease)}
+button.tile::before{content:"";display:block;height:5px;margin:0 -14px 4px}
+button.tile.t-AUTO-RESOLVE::before{background:var(--green)}
+button.tile.t-KEEP-DRAFTING::before{background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 12px)}
+button.tile.t-ALWAYS-A-PERSON::before{background:var(--ink)}
+button.tile:hover{border-color:var(--ink);transform:translateY(-2px)}
+button.tile[aria-expanded=true]{border-color:var(--ink);box-shadow:0 0 0 1.5px var(--ink)}
+button.tile.changed{box-shadow:0 0 0 3px var(--green-wash)}
+.tile .name{font:400 18px/1.2 var(--serif);min-height:2.4em}
+.tile .nums{margin-top:auto;display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
+.tile .nums b{font:400 22px/1 var(--serif);color:var(--ink);margin-right:5px;font-variant-numeric:tabular-nums}
+.badge{min-height:24px;padding:0 10px;font-size:11.5px;justify-self:start;align-self:flex-start}
+.detail{border-top:1px solid var(--rule);padding:18px 24px 20px;background:var(--paper)}
+.detail h3{margin:0 0 4px;font:400 22px/1.2 var(--serif)}
+.detail .hint{margin:0;color:var(--ink-2);font-size:15px}
+.strip{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:4px;max-width:640px;margin:14px 0 6px}
+.cell{display:block;aspect-ratio:1;border-radius:4px;border:1.5px solid transparent}
+.cell.approved{background:var(--green)}
+.cell.edited{background:var(--paper);border-color:var(--ink)}
+.cell.none{background:var(--paper);border:1.5px dashed var(--ink-2)}
+.dl{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink-2);font-size:13px;margin:0 0 12px}
+.dl span{display:inline-flex;align-items:center;gap:7px}
+.dl i{width:11px;height:11px;border-radius:3px;border:1.5px solid transparent}
+.dl .approved{background:var(--green)}.dl .edited{border-color:var(--ink)}.dl .none{border:1.5px dashed var(--ink-2)}
+.steps{list-style:none;margin:8px 0 0;padding:0}
+.steps li{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 14px;align-items:baseline;padding:9px 0;border-top:1px solid var(--rule-soft);font-size:15px}
+.steps li:first-child{border-top:0}
+.tag{display:inline-flex;align-items:center;justify-self:start;min-height:22px;padding:0 8px;border-radius:999px;border:1px solid var(--rule);font:500 11.5px/1 var(--mono);letter-spacing:.03em;white-space:nowrap}
+.tag.add{background:var(--green-wash);border-color:var(--green-wash);color:var(--green)}
+.tag.remove{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.tag.once{border-style:dashed}
+.steps .why{display:block;color:var(--ink-2);font-size:13px;margin-top:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;padding:12px 24px;border-top:1px solid var(--rule);color:var(--ink-2);font-size:13px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:56px;align-items:start}
+.content h2{scroll-margin-top:24px}
+.side{position:sticky;top:24px;margin-top:64px;display:grid;gap:22px;font-size:14px;color:var(--ink-2)}
+.side h3{margin:0 0 6px;font:500 13px/1.3 var(--sans);color:var(--ink)}
+.side p{margin:0}
+.side nav a{display:block;padding:5px 0;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-soft)}
+.side nav a:hover{color:var(--ink)}
+.side pre{font-size:12px;margin:6px 0 0}
+.point{font-size:17px;max-width:42em}
+.note{color:var(--ink-2);font-size:15px;max-width:44em;margin-top:14px}
+.chart{border:1px solid var(--rule);border-radius:16px;background:#fbfaf6;padding:16px 20px 12px}
+.chart svg{display:block;max-width:100%;height:auto;font-variant-numeric:tabular-nums}
+.chart .ckey svg{display:inline-block}
+.chart .lbl{font:400 13.5px var(--sans);fill:var(--ink)}
+.chart .sub{font:400 11.5px var(--mono);fill:var(--ink-2)}
+.chart .ax{stroke:var(--rule);stroke-width:1}
+.chart .grid{stroke:var(--rule-soft);stroke-width:1}
+.chart .bar{stroke:var(--ink-2);stroke-width:2}
+.chart .pd{fill:var(--ink)}
+.chart .id{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.chart .gap{fill:var(--green-deep);font:500 12px var(--mono)}
+.ckey{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink-2);font-size:13px;margin-top:8px}
+.ckey span{display:inline-flex;align-items:center;gap:7px}
+.ckey svg{width:12px;height:12px}
+.gaps{border:1px solid var(--rule);border-radius:16px;background:#fbfaf6;overflow:hidden}
+.gt{padding:14px 20px;border-top:1px solid var(--rule-soft)}
+.gt:first-child{border-top:0}
+.gt h3{margin:0 0 4px;font:400 20px/1.2 var(--serif)}
+.gt ul{list-style:none;margin:0;padding:0}
+.gt li{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:4px 12px;align-items:baseline;padding:6px 0;font-size:15px}
+.gt .why{display:block;color:var(--ink-2);font-size:13px}
+.rule{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rule div{border:1px solid var(--rule);border-radius:16px;padding:18px 20px;background:#fbfaf6;font-size:15px}
+.rule h3{margin:0 0 6px;font:400 20px/1.2 var(--serif)}
+.rule p{margin:0}
+@media (max-width:1000px){
+ .layout{grid-template-columns:minmax(0,1fr);gap:0}
+ .side{position:static;margin-top:48px}
+ .rule{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+ .bar-top,.vline,.tally,.topics,.detail,.legend{padding-left:16px;padding-right:16px}
+ .vline{grid-template-columns:1fr}
+ .vline h2{font-size:28px}
+ .share{text-align:left}
+ .share b{font-size:38px}
+ .vline p{font-size:16px}
+ .counts{grid-template-columns:1fr;gap:10px}
+ .counts b{font-size:30px;min-width:1.1em}
+ .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ button.tile{padding:0 11px 10px}
+ button.tile::before{margin:0 -11px 2px}
+ .tile .name{font-size:16px}
+ .tile .nums{flex-wrap:wrap;gap:2px 10px;font-size:12.5px}
+ .tile .nums b{font-size:20px;margin-right:4px}
+ .strip{grid-template-columns:repeat(10,minmax(0,1fr))}
+ .steps li{grid-template-columns:1fr;gap:4px}
+ .seg button{padding:0 12px;font-size:13.5px}
+ .gt{padding:12px 16px}
+ .gt li{grid-template-columns:1fr}
+ .chart{padding:12px}
+}
+@media (prefers-reduced-motion:reduce){button.tile,.stack i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<div class="head">
+<h1>Service desk gap finder</h1>
+<p class="lead">A support desk's knowledge base and its ticket notes often disagree, and the real fix tends to sit in the notes, often the outside provider's. This tool reads a year of resolved tickets next to the articles, lists every fix the articles are missing, and then applies one gate to every topic: it may answer on its own only after 48 of its last 50 drafted answers were approved with no edits.</p>
+</div>
+
+<section class="board" id="board" aria-labelledby="verdict-h">
+  <div class="bar-top">
+    <div class="seg" role="radiogroup" aria-label="Which knowledge base the drafts use">
+      <button type="button" role="radio" aria-checked="true" data-v="before">Articles as they are</button>
+      <button type="button" role="radio" aria-checked="false" data-v="after" tabindex="-1">After approved updates</button>
+    </div>
+    <p class="cap" id="cap"></p>
+  </div>
+  <div class="vline" aria-live="polite">
+    <h2 id="verdict-h"></h2>
+    <div class="share"><b id="sharev"></b><span>of all tickets on cleared topics</span></div>
+    <p id="takeaway"></p>
+  </div>
+  <div class="tally">
+    <div class="stack" id="stack" aria-hidden="true"></div>
+    <p class="stackcap">Every ticket in the year, by topic. Bar widths are to scale; the grey block is one-off tickets outside the named topics.</p>
+    <div class="counts" id="counts"></div>
+  </div>
+  <div class="topics"><div class="tiles" id="tiles"></div></div>
+  <div class="detail" id="detail" aria-live="polite"></div>
+</section>
+
+<div class="layout">
+<div class="content">
+
+<h2 id="where">Where the missing fixes live</h2>
+<p class="point" id="wherept"></p>
+<div class="chart" id="chart"></div>
+<p class="note">Each row is one step the articles were missing. The dots show how often that step appears in the provider's notes and in the internal team's notes for the same topic. A wide gap means the fix is only written down by the provider, so it would be lost if the provider changed.</p>
+
+<h2 id="gaps">Gap list for the desk lead</h2>
+<p class="point" id="gapspt"></p>
+<div class="gaps" id="gaplist"></div>
+
+<h2 id="rules">The rules</h2>
+<div class="rule" id="rulecards"></div>
+<p class="note">Point-of-sale outages, payments and security incidents are never answered automatically, whatever their drafts score. They are drafted for an analyst or routed straight to a person.</p>
+</div>
+
+<aside class="side" aria-label="About this build">
+  <nav aria-label="On this page"><a href="#board">Topic board</a><a href="#where">Where the missing fixes live</a><a href="#gaps">Gap list for the desk lead</a><a href="#rules">The rules</a></nav>
+  <div><h3>Data</h3><p>All tickets, topics, steps and volumes are made up for a fictional retailer's employee IT desk and describe no real company. Each resolution note carries tagged steps, so the tool counts steps rather than reading free text. A simulated analyst approves a draft only when it has exactly the steps that ticket needed.</p></div>
+  <div><h3>Run it yourself</h3><p>Python 3.9 or later, standard library only. From the repo folder:</p><pre>python3 run.py
+python3 -m unittest
+python3 scripts/build_demo.py</pre></div>
+  <div><a class="pill" href="https://github.com/pg2342-hub/REPO">Code on GitHub</a></div>
+</aside>
+</div>
+</main>
+<script>
+const D = /*DATA*/null;
+let view = "before", sel = null;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cls = v => v.replace(/ /g,"-");
+const pct = (x,d=1) => (x*100).toFixed(d).replace(/\.0$/,"")+"%";
+const ORDER = ["AUTO-RESOLVE","KEEP DRAFTING","ALWAYS A PERSON"];
+const MEANS = {"AUTO-RESOLVE":"48 or more of the last 50 drafts approved with no edits","KEEP DRAFTING":"an analyst approves every draft","ALWAYS A PERSON":"point of sale, payments, security"};
+const BADGE = {"AUTO-RESOLVE":"go","KEEP DRAFTING":"partial","ALWAYS A PERSON":"no-go"};
+const CAPS = {before:"Drafts come from the knowledge base as it is today.",
+              after:"Drafts come from the knowledge base once the desk lead approves every update on the gap list."};
+const L = D.steps, NAMES = Object.fromEntries(D.topics.map(t=>[t.id,t.name]));
+const seg = [...document.querySelectorAll(".seg button")];
+function show(v){
+  view=v;
+  seg.forEach(b=>{const on=b.dataset.v==v; b.setAttribute("aria-checked",String(on)); b.tabIndex=on?0:-1;});
+  render();
+}
+seg.forEach((b,i)=>{
+  b.addEventListener("click",()=>show(b.dataset.v));
+  b.addEventListener("keydown",e=>{
+    if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key))return;
+    e.preventDefault(); const n=seg[(i+1)%seg.length]; show(n.dataset.v); n.focus();
+  });
+});
+function render(){
+  const V=D.views[view], ts=V.topics, other=D.views[view=="before"?"after":"before"].topics;
+  const cnt={}; ORDER.forEach(k=>cnt[k]=ts.filter(x=>x.verdict==k).length);
+  const drafted=ts.filter(t=>!t.excluded).length;
+  document.getElementById("cap").textContent=CAPS[view];
+  document.getElementById("verdict-h").textContent=`${V.cleared} of ${drafted} topics can answer on their own`;
+  document.getElementById("sharev").textContent=pct(V.cleared_share);
+  const near=ts.filter(t=>t.verdict=="KEEP DRAFTING"&&t.approved==D.rules.gate_pass-1);
+  document.getElementById("takeaway").innerHTML = view=="before"
+    ? `<b>${V.coverage.of-V.coverage.accurate} of ${V.coverage.of} drafted topics have an article that is missing a step, has an outdated one, or does not exist</b>, so their drafts get edited and they stay with an analyst. The day 30 bar is ${pct(V.volume_bar,0)} of tickets on cleared topics.`
+    : `<b>Every drafted topic now has an accurate article</b>, and ${V.cleared} topics clear the gate. ${near.length} more (${near.map(t=>esc(t.name)).join(", ")}) miss it by a single draft and stay with an analyst, because some of their tickets need a one-off step no article should promise.`;
+  const total=V.total_tickets, tail=total-ts.reduce((a,t)=>a+t.volume,0);
+  document.getElementById("stack").innerHTML=ORDER.flatMap(k=>ts.filter(t=>t.verdict==k).map(t=>`<i class="k-${cls(k)}" style="flex-grow:${t.volume}" title="${esc(t.name)}"></i>`)).join("")+`<i class="k-LONG-TAIL" style="flex-grow:${tail}" title="One-off tickets"></i>`;
+  document.getElementById("counts").innerHTML=ORDER.map(k=>`<div class="${cnt[k]?"":"zero"}"><b>${cnt[k]}</b><span class="lab"><i class="k-${cls(k)}"></i>${k}</span><span>${MEANS[k]}</span></div>`).join("");
+  document.getElementById("tiles").innerHTML=ts.map(t=>{
+    const was=other.find(o=>o.id==t.id).verdict, changed=view=="after"&&was!=t.verdict;
+    return `<button type="button" class="tile t-${cls(t.verdict)}${changed?" changed":""}" data-t="${t.id}" aria-expanded="${sel==t.id}" aria-controls="detail">
+      <span class="badge ${BADGE[t.verdict]}">${t.verdict}</span>
+      <span class="name">${esc(t.name)}</span>
+      <span class="nums">${t.excluded?`<span><b>${pct(t.volume_share)}</b>of tickets</span>`:`<span><b>${t.approved}</b>of ${t.window} approved</span><span><b>${pct(t.volume_share)}</b>of tickets</span>`}</span>
+    </button>`;}).join("");
+  document.querySelectorAll("button.tile").forEach(b=>b.addEventListener("click",()=>pick(b.dataset.t)));
+  const det=document.getElementById("detail");
+  if(!sel){det.innerHTML=`<p class="hint">Select a topic to see its last 50 drafts and what the gap finder changed in its article.</p>`;return;}
+  const t=ts.find(x=>x.id==sel), f=D.found[sel]||{missing:[],outdated:[],occasional:[]}, art=(view=="before"?D.kb_before:D.kb_after)[sel];
+  let h=`<h3>${esc(t.name)}</h3>`;
+  if(t.excluded){
+    h+=`<p class="hint">${esc(t.excluded)}. Never answered automatically, so no gate applies. Select the topic again to close.</p>`;
+  } else {
+    const ap=t.drafts.filter(x=>x=="approved").length;
+    h+=`<p class="hint">${ap} of ${t.window} drafts approved with no edits; the gate needs 48. Select the topic again to close.</p>
+      <div class="strip" role="img" aria-label="${ap} approved, ${t.edited} edited, ${t.no_draft} with no draft">${t.drafts.map(x=>`<i class="cell ${x}"></i>`).join("")}</div>
+      <div class="dl"><span><i class="approved"></i>Approved, no edits</span><span><i class="edited"></i>Edited by the analyst</span><span><i class="none"></i>No article, no draft</span></div>`;
+  }
+  const rows=[];
+  (art||[]).forEach(s=>{
+    const added=view=="after"&&f.missing.some(m=>m.step==s);
+    rows.push(`<li><span class="tag ${added?"add":""}">${added?"ADDED":"IN ARTICLE"}</span><span>${esc(L[s])}${added?`<span class="why">Found in ${pct(f.missing.find(m=>m.step==s).share,0)} of this topic's notes.</span>`:""}</span></li>`);
+  });
+  if(view=="before") f.missing.forEach(m=>rows.push(`<li><span class="tag add">MISSING</span><span>${esc(L[m.step])}<span class="why">In ${pct(m.share,0)} of this topic's notes (${pct(m.provider_rate,0)} of provider notes, ${pct(m.internal_rate,0)} of internal notes).</span></span></li>`));
+  f.outdated.forEach(o=>rows.push(`<li><span class="tag remove">${view=="before"?"OUTDATED":"REMOVED"}</span><span>${esc(L[o.step])}<span class="why">In the article but in ${pct(o.share,0)} of the notes.</span></span></li>`));
+  f.occasional.forEach(o=>rows.push(`<li><span class="tag once">ONE-OFF</span><span>${esc(L[o.step])}<span class="why">In ${pct(o.share,0)} of the notes. Kept as an escalation path, not added to the default answer.</span></span></li>`));
+  if(!art&&view=="before") h+=`<p class="hint" style="margin-top:8px">No article exists for this topic today.</p>`;
+  det.innerHTML=h+`<ul class="steps">${rows.join("")}</ul>`;
+}
+function pick(t){sel = sel==t?null:t; render(); const b=document.querySelector(`button.tile[data-t="${t}"]`); b&&b.focus();}
+
+// Where the missing fixes live: provider-note rate vs internal-note rate for every missing step, drawn to scale.
+const CROWS=[]; Object.entries(D.found).forEach(([tid,f])=>f.missing.forEach(m=>CROWS.push({...m,topic:tid})));
+CROWS.sort((a,b)=>(b.provider_rate-b.internal_rate)-(a.provider_rate-a.internal_rate));
+function wrap(t,n){const w=t.split(" "),o=[];let l="";w.forEach(x=>{if((l+" "+x).trim().length>n&&l){o.push(l);l=x}else l=(l+" "+x).trim()});o.push(l);return o;}
+function drawChart(){
+  const box=document.getElementById("chart"), W=Math.max(280,Math.round(box.clientWidth-(innerWidth<700?24:40)));
+  const narrow=W<560, left=narrow?8:Math.min(300,Math.round(W*.42)), right=narrow?62:70, top=26, x=v=>left+v*(W-left-right);
+  let y=top, body="";
+  CROWS.forEach(r=>{
+    const lines=wrap(L[r.step],narrow?Math.floor(W/7.2):Math.floor((left-16)/6.6));
+    const lh=16, textH=lines.length*lh+15, rowH=narrow?textH+26:Math.max(textH,30)+14;
+    const by=narrow?y+textH+12:y+rowH/2-4;
+    body+=`<text class="sub" x="0" y="${y+11}">${esc(NAMES[r.topic])}</text>`;
+    lines.forEach((l,i)=>body+=`<text class="lbl" x="0" y="${y+28+i*lh}">${esc(l)}</text>`);
+    const lo=Math.min(r.provider_rate,r.internal_rate), hi=Math.max(r.provider_rate,r.internal_rate);
+    body+=`<line class="bar" x1="${x(lo)}" x2="${x(hi)}" y1="${by}" y2="${by}"/>`;
+    body+=`<circle class="id" cx="${x(r.internal_rate)}" cy="${by}" r="6"><title>Internal notes ${pct(r.internal_rate,0)}</title></circle>`;
+    body+=`<circle class="pd" cx="${x(r.provider_rate)}" cy="${by}" r="${hi==lo?4:6}"><title>Provider notes ${pct(r.provider_rate,0)}</title></circle>`;
+    const d=Math.round((r.provider_rate-r.internal_rate)*100);
+    body+=`<text class="gap" x="${x(hi)+12}" y="${by+4}">${d>0?"+"+d+" pts":"same"}</text>`;
+    body+=`<line class="grid" x1="0" x2="${W}" y1="${y+rowH-2}" y2="${y+rowH-2}"/>`;
+    y+=rowH;
+  });
+  let grid="";[0,.25,.5,.75,1].forEach(v=>{grid+=`<line class="grid" x1="${x(v)}" x2="${x(v)}" y1="${top-6}" y2="${y}"/><text class="sub" x="${x(v)}" y="${top-12}" text-anchor="middle">${v*100}%</text>`;});
+  box.innerHTML=`<svg viewBox="0 0 ${W} ${y+6}" width="${W}" height="${y+6}" role="img" aria-label="Share of provider and internal notes that mention each missing step">${grid}${body}</svg><div class="ckey"><span><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="var(--ink)"/></svg>Provider notes</span><span><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="4.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/></svg>Internal notes</span><span>Share of the topic's notes that mention the step</span></div>`;
+}
+drawChart(); let rz; addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(drawChart,150)});
+(function(){
+  const rows=CROWS, prov=rows.filter(r=>r.lives_in=="provider notes");
+  document.getElementById("wherept").innerHTML=`The gap finder found <b>${rows.length} steps the articles were missing</b>. ${prov.length} of them (${prov.map(r=>esc(NAMES[r.topic])).join(", ")}) are written down almost only by the outside provider, and those topics carry ${pct(prov.reduce((a,r)=>a+D.views.before.topics.find(t=>t.id==r.topic).volume_share,0))} of all tickets.`;
+})();
+
+(function(){
+  const items=Object.entries(D.found).filter(([,f])=>f.missing.length||f.outdated.length);
+  const n=items.reduce((a,[,f])=>a+f.missing.length+f.outdated.length,0);
+  document.getElementById("gapspt").innerHTML=`${n} updates across ${items.length} topics. Each one is a suggestion the desk lead approves or rejects; the desk lead owns every approved update, so the knowledge stays with the company if the provider changes.`;
+  document.getElementById("gaplist").innerHTML=items.map(([tid,f])=>`<div class="gt"><h3>${esc(NAMES[tid])}</h3><ul>${
+    (f.has_article?"":`<li><span class="tag add">NEW</span><span>No article today; the steps below become one.</span></li>`)+
+    f.missing.map(m=>`<li><span class="tag add">ADD</span><span>${esc(L[m.step])}<span class="why">In ${pct(m.share,0)} of notes; ${m.lives_in=="provider notes"?"written down almost only by the provider":"written down by both teams"}.</span></span></li>`).join("")+
+    f.outdated.map(o=>`<li><span class="tag remove">REMOVE</span><span>${esc(L[o.step])}<span class="why">In the article but in ${pct(o.share,0)} of notes.</span></span></li>`).join("")
+  }</ul></div>`).join("");
+  const R=D.rules;
+  document.getElementById("rulecards").innerHTML=[
+    ["Add a step",`A step that is not in the article but appears in at least ${pct(R.add_at,0)} of the topic's notes.`],
+    ["Remove a step",`A step in the article that appears in fewer than ${pct(R.stale_below,0)} of the notes.`],
+    ["Answer on its own",`At least ${R.gate_pass} of the topic's last ${R.gate_window} drafts approved with no edits, and the topic is not excluded.`]
+  ].map(r=>`<div><h3>${r[0]}</h3><p>${r[1]}</p></div>`).join("");
+})();
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,5849 @@
+[
+ {
+  "id": "P-password-01",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-02",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-03",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-04",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-05",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-06",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-07",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-08",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-09",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-10",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-11",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-12",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-13",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-14",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-15",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-16",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-17",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-18",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-19",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-20",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-21",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-22",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-23",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-24",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-25",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-26",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-27",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-28",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-29",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-30",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-31",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-32",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-33",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-34",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-35",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-36",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-37",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-38",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-39",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-40",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-41",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-42",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-43",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-44",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-45",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-46",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-47",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-48",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-49",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-password-50",
+  "topic": "password",
+  "needed_steps": [
+   "verify_identity",
+   "reset_password_portal",
+   "tell_sync_wait"
+  ]
+ },
+ {
+  "id": "P-mfa-01",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-02",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-03",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-04",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-05",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-06",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-07",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-08",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-09",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-10",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-11",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-12",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-13",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-14",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-15",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-16",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-17",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-18",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-19",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-20",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-21",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-22",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-23",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-24",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-25",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-26",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-27",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-28",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-29",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-30",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-31",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-32",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-33",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-34",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-35",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-36",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-37",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-38",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-39",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-40",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-41",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-42",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-43",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-44",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-45",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-46",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-47",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-48",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-49",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-mfa-50",
+  "topic": "mfa",
+  "needed_steps": [
+   "verify_identity",
+   "remove_old_mfa",
+   "send_mfa_link",
+   "confirm_mfa_signin"
+  ]
+ },
+ {
+  "id": "P-schedule-01",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-02",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-03",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache",
+   "unlock_account"
+  ]
+ },
+ {
+  "id": "P-schedule-04",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-05",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-06",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-07",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-08",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-09",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-10",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-11",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-12",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-13",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-14",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-15",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-16",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-17",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-18",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-19",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-20",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-21",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-22",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-23",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-24",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-25",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-26",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-27",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-28",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-29",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-30",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-31",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-32",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-33",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-34",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-35",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-36",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-37",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-38",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-39",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-40",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-41",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-42",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-43",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-44",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-45",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-46",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-47",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-48",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-49",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-schedule-50",
+  "topic": "schedule",
+  "needed_steps": [
+   "check_schedule_license",
+   "relink_store_id",
+   "clear_app_cache"
+  ]
+ },
+ {
+  "id": "P-timeclock-01",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-02",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-03",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-04",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm",
+   "escalate_payroll"
+  ]
+ },
+ {
+  "id": "P-timeclock-05",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-06",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-07",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-08",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-09",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-10",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-11",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-12",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-13",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-14",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-15",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-16",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-17",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-18",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-19",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-20",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-21",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-22",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-23",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-24",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-25",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-26",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-27",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-28",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-29",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-30",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-31",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-32",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-33",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-34",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-35",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-36",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-37",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-38",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-39",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-40",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-41",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-42",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-43",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-44",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-45",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-46",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm",
+   "escalate_payroll"
+  ]
+ },
+ {
+  "id": "P-timeclock-47",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-48",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-timeclock-49",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm",
+   "escalate_payroll"
+  ]
+ },
+ {
+  "id": "P-timeclock-50",
+  "topic": "timeclock",
+  "needed_steps": [
+   "manager_approval",
+   "add_punch_wfm"
+  ]
+ },
+ {
+  "id": "P-scanner-01",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-02",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-03",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-04",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-05",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-06",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-07",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth",
+   "swap_scanner_provider"
+  ]
+ },
+ {
+  "id": "P-scanner-08",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-09",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-10",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-11",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth",
+   "swap_scanner_provider"
+  ]
+ },
+ {
+  "id": "P-scanner-12",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-13",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-14",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-15",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-16",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-17",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-18",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-19",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-20",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth",
+   "swap_scanner_provider"
+  ]
+ },
+ {
+  "id": "P-scanner-21",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-22",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-23",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-24",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-25",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-26",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-27",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-28",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-29",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth",
+   "swap_scanner_provider"
+  ]
+ },
+ {
+  "id": "P-scanner-30",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-31",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-32",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-33",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-34",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-35",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-36",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-37",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-38",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-39",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth",
+   "swap_scanner_provider"
+  ]
+ },
+ {
+  "id": "P-scanner-40",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-41",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-42",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-43",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-44",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-45",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth",
+   "swap_scanner_provider"
+  ]
+ },
+ {
+  "id": "P-scanner-46",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-47",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-48",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-49",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-scanner-50",
+  "topic": "scanner",
+  "needed_steps": [
+   "reboot_scanner",
+   "reset_scanner_profile",
+   "repair_bluetooth"
+  ]
+ },
+ {
+  "id": "P-printer-01",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-02",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue",
+   "printer_provider_swap"
+  ]
+ },
+ {
+  "id": "P-printer-03",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-04",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-05",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-06",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-07",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-08",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-09",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-10",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-11",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-12",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-13",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-14",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-15",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-16",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-17",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-18",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-19",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-20",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-21",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-22",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-23",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-24",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-25",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-26",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-27",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-28",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-29",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-30",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-31",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-32",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-33",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-34",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-35",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-36",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue",
+   "printer_provider_swap"
+  ]
+ },
+ {
+  "id": "P-printer-37",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-38",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-39",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-40",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-41",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-42",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue",
+   "printer_provider_swap"
+  ]
+ },
+ {
+  "id": "P-printer-43",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-44",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-45",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-46",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-47",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-48",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-49",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-printer-50",
+  "topic": "printer",
+  "needed_steps": [
+   "power_cycle_printer",
+   "check_printer_ip",
+   "readd_printer_queue"
+  ]
+ },
+ {
+  "id": "P-wifi-01",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-02",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-03",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-04",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-05",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-06",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-07",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-08",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-09",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-10",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-11",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-12",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-13",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-14",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-15",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-16",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-17",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-18",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-19",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-20",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-21",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-22",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-23",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-24",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-25",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-26",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-27",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-28",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-29",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-30",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-31",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-32",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-33",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-34",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-35",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-36",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-37",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-38",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-39",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-40",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-41",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-42",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-43",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-44",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-45",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-46",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-47",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network",
+   "provider_circuit_ticket"
+  ]
+ },
+ {
+  "id": "P-wifi-48",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-49",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-wifi-50",
+  "topic": "wifi",
+  "needed_steps": [
+   "check_ap_status",
+   "restart_ap",
+   "forget_network"
+  ]
+ },
+ {
+  "id": "P-newhire-01",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-02",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-03",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-04",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group",
+   "hr_record_fix"
+  ]
+ },
+ {
+  "id": "P-newhire-05",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-06",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-07",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-08",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-09",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-10",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-11",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-12",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-13",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-14",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-15",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-16",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-17",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-18",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-19",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-20",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-21",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-22",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-23",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-24",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-25",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-26",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-27",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-28",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-29",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-30",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-31",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group",
+   "hr_record_fix"
+  ]
+ },
+ {
+  "id": "P-newhire-32",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-33",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-34",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-35",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-36",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-37",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-38",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-39",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-40",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-41",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-42",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-43",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-44",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-45",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-46",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-47",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group",
+   "hr_record_fix"
+  ]
+ },
+ {
+  "id": "P-newhire-48",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-49",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-newhire-50",
+  "topic": "newhire",
+  "needed_steps": [
+   "check_hr_start_date",
+   "trigger_provisioning",
+   "assign_store_group"
+  ]
+ },
+ {
+  "id": "P-mailbox-01",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-02",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-03",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-04",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-05",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-06",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-07",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-08",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-09",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-10",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-11",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-12",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-13",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-14",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-15",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-16",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-17",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-18",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-19",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-20",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-21",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-22",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-23",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-24",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-25",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-26",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-27",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-28",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-29",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-30",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-31",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-32",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-33",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-34",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-35",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-36",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-37",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-38",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-39",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-40",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-41",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-42",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-43",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-44",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-45",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-46",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-47",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-48",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-49",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-mailbox-50",
+  "topic": "mailbox",
+  "needed_steps": [
+   "check_mailbox_owner",
+   "grant_mailbox",
+   "tell_restart_outlook"
+  ]
+ },
+ {
+  "id": "P-vpn-01",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-02",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-03",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-04",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-05",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-06",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-07",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-08",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-09",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-10",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-11",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-12",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-13",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-14",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-15",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-16",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-17",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-18",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-19",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-20",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-21",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-22",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-23",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-24",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-25",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-26",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-27",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-28",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-29",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-30",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-31",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-32",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-33",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-34",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-35",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-36",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-37",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-38",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-39",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-40",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-41",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-42",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-43",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-44",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-45",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-46",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-47",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-48",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-49",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-vpn-50",
+  "topic": "vpn",
+  "needed_steps": [
+   "check_vpn_group",
+   "check_vpn_client",
+   "reinstall_vpn_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-01",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile",
+   "reregister_device"
+  ]
+ },
+ {
+  "id": "P-mobilemail-02",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-03",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-04",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-05",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-06",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-07",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-08",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-09",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-10",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-11",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-12",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-13",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-14",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-15",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-16",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-17",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-18",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-19",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-20",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-21",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-22",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-23",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-24",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-25",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-26",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-27",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-28",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-29",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-30",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-31",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-32",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-33",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-34",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-35",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-36",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-37",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-38",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-39",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-40",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-41",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-42",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-43",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-44",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-45",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-46",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-47",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-48",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-49",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-mobilemail-50",
+  "topic": "mobilemail",
+  "needed_steps": [
+   "check_os_version",
+   "enroll_mdm",
+   "add_mail_profile"
+  ]
+ },
+ {
+  "id": "P-teams-01",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-02",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-03",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-04",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-05",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-06",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-07",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-08",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-09",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-10",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-11",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-12",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-13",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache",
+   "replace_headset"
+  ]
+ },
+ {
+  "id": "P-teams-14",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache",
+   "replace_headset"
+  ]
+ },
+ {
+  "id": "P-teams-15",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-16",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-17",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-18",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-19",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-20",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-21",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-22",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-23",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-24",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-25",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-26",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-27",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-28",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache",
+   "replace_headset"
+  ]
+ },
+ {
+  "id": "P-teams-29",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-30",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-31",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-32",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-33",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-34",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-35",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-36",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-37",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-38",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-39",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-40",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-41",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-42",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-43",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-44",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-45",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-46",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-47",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-48",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-49",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-teams-50",
+  "topic": "teams",
+  "needed_steps": [
+   "check_audio_device",
+   "update_teams",
+   "reset_teams_cache"
+  ]
+ },
+ {
+  "id": "P-laptop-01",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-02",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-03",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-04",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-05",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-06",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "reimage_laptop"
+  ]
+ },
+ {
+  "id": "P-laptop-07",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "replace_battery"
+  ]
+ },
+ {
+  "id": "P-laptop-08",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-09",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-10",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-11",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "replace_battery"
+  ]
+ },
+ {
+  "id": "P-laptop-12",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-13",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-14",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-15",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-16",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-17",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "replace_battery"
+  ]
+ },
+ {
+  "id": "P-laptop-18",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-19",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-20",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "reimage_laptop"
+  ]
+ },
+ {
+  "id": "P-laptop-21",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-22",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "reimage_laptop"
+  ]
+ },
+ {
+  "id": "P-laptop-23",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-24",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-25",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-26",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-27",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-28",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-29",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-30",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-31",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-32",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-33",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-34",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-35",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "replace_battery"
+  ]
+ },
+ {
+  "id": "P-laptop-36",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-37",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-38",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-39",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-40",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "reimage_laptop"
+  ]
+ },
+ {
+  "id": "P-laptop-41",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-42",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-43",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "reimage_laptop"
+  ]
+ },
+ {
+  "id": "P-laptop-44",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-45",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "run_hardware_diag"
+  ]
+ },
+ {
+  "id": "P-laptop-46",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-47",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps",
+   "replace_battery"
+  ]
+ },
+ {
+  "id": "P-laptop-48",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-49",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ },
+ {
+  "id": "P-laptop-50",
+  "topic": "laptop",
+  "needed_steps": [
+   "check_disk_space",
+   "check_startup_apps"
+  ]
+ }
+]

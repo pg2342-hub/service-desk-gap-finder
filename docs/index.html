@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- demo-chrome --><meta name="theme-color" content="#f4f2ec"><link rel="icon" href="https://pranavgudise.dev/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="https://pranavgudise.dev/kit/demo.css"><!-- /demo-chrome -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Desk Gap Finder</title>
+<meta name="description" content="Reads a year of resolved service desk tickets next to the knowledge base, lists the fixes that live only in ticket notes, and lets a topic answer on its own only after 48 of its last 50 drafts were approved with no edits.">
+<style>
+.head h1{margin:40px 0 14px}
+.head .lead{max-width:40em}
+.board{margin:32px 0 0;border:1px solid var(--rule);border-radius:16px;background:#fbfaf6;overflow:hidden;scroll-margin-top:24px}
+.bar-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px 24px;border-bottom:1px solid var(--rule)}
+.seg{display:flex;width:fit-content;max-width:100%;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.seg button{min-height:38px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--ink-2);font:500 15px/1 var(--sans);cursor:pointer;white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-checked=true]{background:var(--ink);color:var(--paper)}
+.cap{margin:0;color:var(--ink-2);font-size:15px}
+.vline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;align-items:end;padding:22px 24px 6px}
+.vline h2{all:unset;display:block;font:400 34px/1.1 var(--serif)}
+.vline p{grid-column:1/-1;margin:0;font-size:17px;max-width:46em}
+.share{text-align:right}
+.share b{display:block;font:400 44px/1 var(--serif);font-variant-numeric:tabular-nums}
+.share span{display:block;color:var(--ink-2);font-size:13px;margin-top:4px}
+.tally{padding:18px 24px 22px}
+.stack{display:flex;gap:4px;height:22px}
+.stack i{border-radius:4px;min-width:6px;transition:background-color .3s var(--ease),flex-grow .3s var(--ease)}
+.k-AUTO-RESOLVE{background:var(--green)}
+.k-KEEP-DRAFTING{background:repeating-linear-gradient(135deg,var(--ink) 0 1.5px,transparent 1.5px 6px);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.k-ALWAYS-A-PERSON{background:var(--ink)}
+.k-LONG-TAIL{background:var(--rule-soft);box-shadow:inset 0 0 0 1px var(--rule)}
+.stackcap{margin:8px 0 0;color:var(--ink-2);font-size:13px}
+.counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:14px}
+.counts div{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:baseline}
+.counts b{grid-row:span 2;font:400 36px/1 var(--serif)}
+.counts .lab{display:flex;align-items:center;gap:8px;font:500 13px/1.3 var(--mono);letter-spacing:.04em}
+.counts .lab i{width:12px;height:12px;border-radius:3px;flex:none}
+.counts span:last-child{color:var(--ink-2);font-size:14px;line-height:1.35}
+.counts .zero b{color:var(--ink-2)}
+.topics{border-top:1px solid var(--rule);padding:18px 24px 22px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:10px}
+button.tile{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;min-height:0;padding:0 14px 12px;border:1px solid var(--rule);border-radius:12px;background:var(--paper);color:var(--ink);text-align:left;font:inherit;font-weight:400;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .2s var(--ease)}
+button.tile::before{content:"";display:block;height:5px;margin:0 -14px 4px}
+button.tile.t-AUTO-RESOLVE::before{background:var(--green)}
+button.tile.t-KEEP-DRAFTING::before{background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 12px)}
+button.tile.t-ALWAYS-A-PERSON::before{background:var(--ink)}
+button.tile:hover{border-color:var(--ink);transform:translateY(-2px)}
+button.tile[aria-expanded=true]{border-color:var(--ink);box-shadow:0 0 0 1.5px var(--ink)}
+button.tile.changed{box-shadow:0 0 0 3px var(--green-wash)}
+.tile .name{font:400 18px/1.2 var(--serif);min-height:2.4em}
+.tile .nums{margin-top:auto;display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
+.tile .nums b{font:400 22px/1 var(--serif);color:var(--ink);margin-right:5px;font-variant-numeric:tabular-nums}
+.badge{min-height:24px;padding:0 10px;font-size:11.5px;justify-self:start;align-self:flex-start}
+.detail{border-top:1px solid var(--rule);padding:18px 24px 20px;background:var(--paper)}
+.detail h3{margin:0 0 4px;font:400 22px/1.2 var(--serif)}
+.detail .hint{margin:0;color:var(--ink-2);font-size:15px}
+.strip{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:4px;max-width:640px;margin:14px 0 6px}
+.cell{display:block;aspect-ratio:1;border-radius:4px;border:1.5px solid transparent}
+.cell.approved{background:var(--green)}
+.cell.edited{background:var(--paper);border-color:var(--ink)}
+.cell.none{background:var(--paper);border:1.5px dashed var(--ink-2)}
+.dl{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink-2);font-size:13px;margin:0 0 12px}
+.dl span{display:inline-flex;align-items:center;gap:7px}
+.dl i{width:11px;height:11px;border-radius:3px;border:1.5px solid transparent}
+.dl .approved{background:var(--green)}.dl .edited{border-color:var(--ink)}.dl .none{border:1.5px dashed var(--ink-2)}
+.steps{list-style:none;margin:8px 0 0;padding:0}
+.steps li{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 14px;align-items:baseline;padding:9px 0;border-top:1px solid var(--rule-soft);font-size:15px}
+.steps li:first-child{border-top:0}
+.tag{display:inline-flex;align-items:center;justify-self:start;min-height:22px;padding:0 8px;border-radius:999px;border:1px solid var(--rule);font:500 11.5px/1 var(--mono);letter-spacing:.03em;white-space:nowrap}
+.tag.add{background:var(--green-wash);border-color:var(--green-wash);color:var(--green)}
+.tag.remove{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.tag.once{border-style:dashed}
+.steps .why{display:block;color:var(--ink-2);font-size:13px;margin-top:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;padding:12px 24px;border-top:1px solid var(--rule);color:var(--ink-2);font-size:13px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:56px;align-items:start}
+.content h2{scroll-margin-top:24px}
+.side{position:sticky;top:24px;margin-top:64px;display:grid;gap:22px;font-size:14px;color:var(--ink-2)}
+.side h3{margin:0 0 6px;font:500 13px/1.3 var(--sans);color:var(--ink)}
+.side p{margin:0}
+.side nav a{display:block;padding:5px 0;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-soft)}
+.side nav a:hover{color:var(--ink)}
+.side pre{font-size:12px;margin:6px 0 0}
+.point{font-size:17px;max-width:42em}
+.note{color:var(--ink-2);font-size:15px;max-width:44em;margin-top:14px}
+.chart{border:1px solid var(--rule);border-radius:16px;background:#fbfaf6;padding:16px 20px 12px}
+.chart svg{display:block;max-width:100%;height:auto;font-variant-numeric:tabular-nums}
+.chart .ckey svg{display:inline-block}
+.chart .lbl{font:400 13.5px var(--sans);fill:var(--ink)}
+.chart .sub{font:400 11.5px var(--mono);fill:var(--ink-2)}
+.chart .ax{stroke:var(--rule);stroke-width:1}
+.chart .grid{stroke:var(--rule-soft);stroke-width:1}
+.chart .bar{stroke:var(--ink-2);stroke-width:2}
+.chart .pd{fill:var(--ink)}
+.chart .id{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.chart .gap{fill:var(--green-deep);font:500 12px var(--mono)}
+.ckey{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink-2);font-size:13px;margin-top:8px}
+.ckey span{display:inline-flex;align-items:center;gap:7px}
+.ckey svg{width:12px;height:12px}
+.gaps{border:1px solid var(--rule);border-radius:16px;background:#fbfaf6;overflow:hidden}
+.gt{padding:14px 20px;border-top:1px solid var(--rule-soft)}
+.gt:first-child{border-top:0}
+.gt h3{margin:0 0 4px;font:400 20px/1.2 var(--serif)}
+.gt ul{list-style:none;margin:0;padding:0}
+.gt li{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:4px 12px;align-items:baseline;padding:6px 0;font-size:15px}
+.gt .why{display:block;color:var(--ink-2);font-size:13px}
+.rule{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rule div{border:1px solid var(--rule);border-radius:16px;padding:18px 20px;background:#fbfaf6;font-size:15px}
+.rule h3{margin:0 0 6px;font:400 20px/1.2 var(--serif)}
+.rule p{margin:0}
+@media (max-width:1000px){
+ .layout{grid-template-columns:minmax(0,1fr);gap:0}
+ .side{position:static;margin-top:48px}
+ .rule{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+ .bar-top,.vline,.tally,.topics,.detail,.legend{padding-left:16px;padding-right:16px}
+ .vline{grid-template-columns:1fr}
+ .vline h2{font-size:28px}
+ .share{text-align:left}
+ .share b{font-size:38px}
+ .vline p{font-size:16px}
+ .counts{grid-template-columns:1fr;gap:10px}
+ .counts b{font-size:30px;min-width:1.1em}
+ .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ button.tile{padding:0 11px 10px}
+ button.tile::before{margin:0 -11px 2px}
+ .tile .name{font-size:16px}
+ .tile .nums{flex-wrap:wrap;gap:2px 10px;font-size:12.5px}
+ .tile .nums b{font-size:20px;margin-right:4px}
+ .strip{grid-template-columns:repeat(10,minmax(0,1fr))}
+ .steps li{grid-template-columns:1fr;gap:4px}
+ .seg button{padding:0 12px;font-size:13.5px}
+ .gt{padding:12px 16px}
+ .gt li{grid-template-columns:1fr}
+ .chart{padding:12px}
+}
+@media (prefers-reduced-motion:reduce){button.tile,.stack i{transition:none}}
+</style>
+</head>
+<body>
+<!-- demo-chrome --><header class="demo-top"><a class="demo-brand" href="https://pranavgudise.dev/"><svg class="demo-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><g class="n"><path class="f" d="M15.5 8.5 L 13.4 13.4 L 8.5 15.5 L 10.6 10.6 Z"/></g><circle class="p" cx="12" cy="12" r=".7"/></svg><span>Pranav Gudise</span></a><a class="pill" href="https://github.com/pg2342-hub/service-desk-gap-finder">Code on GitHub</a></header><!-- /demo-chrome -->
+
+<main>
+<div class="head">
+<h1>Service desk gap finder</h1>
+<p class="lead">A support desk's knowledge base and its ticket notes often disagree, and the real fix tends to sit in the notes, often the outside provider's. This tool reads a year of resolved tickets next to the articles, lists every fix the articles are missing, and then applies one gate to every topic: it may answer on its own only after 48 of its last 50 drafted answers were approved with no edits.</p>
+</div>
+
+<section class="board" id="board" aria-labelledby="verdict-h">
+  <div class="bar-top">
+    <div class="seg" role="radiogroup" aria-label="Which knowledge base the drafts use">
+      <button type="button" role="radio" aria-checked="true" data-v="before">Articles as they are</button>
+      <button type="button" role="radio" aria-checked="false" data-v="after" tabindex="-1">After approved updates</button>
+    </div>
+    <p class="cap" id="cap"></p>
+  </div>
+  <div class="vline" aria-live="polite">
+    <h2 id="verdict-h"></h2>
+    <div class="share"><b id="sharev"></b><span>of all tickets on cleared topics</span></div>
+    <p id="takeaway"></p>
+  </div>
+  <div class="tally">
+    <div class="stack" id="stack" aria-hidden="true"></div>
+    <p class="stackcap">Every ticket in the year, by topic. Bar widths are to scale; the grey block is one-off tickets outside the named topics.</p>
+    <div class="counts" id="counts"></div>
+  </div>
+  <div class="topics"><div class="tiles" id="tiles"></div></div>
+  <div class="detail" id="detail" aria-live="polite"></div>
+</section>
+
+<div class="layout">
+<div class="content">
+
+<h2 id="where">Where the missing fixes live</h2>
+<p class="point" id="wherept"></p>
+<div class="chart" id="chart"></div>
+<p class="note">Each row is one step the articles were missing. The dots show how often that step appears in the provider's notes and in the internal team's notes for the same topic. A wide gap means the fix is only written down by the provider, so it would be lost if the provider changed.</p>
+
+<h2 id="gaps">Gap list for the desk lead</h2>
+<p class="point" id="gapspt"></p>
+<div class="gaps" id="gaplist"></div>
+
+<h2 id="rules">The rules</h2>
+<div class="rule" id="rulecards"></div>
+<p class="note">Point-of-sale outages, payments and security incidents are never answered automatically, whatever their drafts score. They are drafted for an analyst or routed straight to a person.</p>
+</div>
+
+<aside class="side" aria-label="About this build">
+  <nav aria-label="On this page"><a href="#board">Topic board</a><a href="#where">Where the missing fixes live</a><a href="#gaps">Gap list for the desk lead</a><a href="#rules">The rules</a></nav>
+  <div><h3>Data</h3><p>All tickets, topics, steps and volumes are made up for a fictional retailer's employee IT desk and describe no real company. Each resolution note carries tagged steps, so the tool counts steps rather than reading free text. A simulated analyst approves a draft only when it has exactly the steps that ticket needed.</p></div>
+  <div><h3>Run it yourself</h3><p>Python 3.9 or later, standard library only. From the repo folder:</p><pre>python3 run.py
+python3 -m unittest
+python3 scripts/build_demo.py</pre></div>
+  <div><a class="pill" href="https://github.com/pg2342-hub/service-desk-gap-finder">Code on GitHub</a></div>
+</aside>
+</div>
+</main>
+<script>
+const D = {"steps": {"verify_identity": "Verify the associate's identity with employee ID and store number", "reset_password_portal": "Reset the password in the self-service portal", "unlock_account": "Unlock the account in the directory", "tell_sync_wait": "Tell the associate to wait 15 minutes for the store devices to sync", "old_sms_reset": "Send a reset code by SMS from the old reset tool", "remove_old_mfa": "Remove the old authenticator registration", "send_mfa_link": "Send a new authenticator enrollment link", "confirm_mfa_signin": "Confirm a test sign-in with the new phone", "check_schedule_license": "Check the associate has a scheduling app license", "clear_app_cache": "Clear the scheduling app cache on the phone", "relink_store_id": "Relink the associate to their home store ID", "manager_approval": "Ask the store manager to approve the missed punch", "add_punch_wfm": "Add the punch in the workforce system", "reboot_scanner": "Reboot the handheld scanner", "repair_bluetooth": "Remove and re-pair the scanner in Bluetooth settings", "reset_scanner_profile": "Reset the scanner to the store profile by scanning the setup barcode", "swap_scanner_provider": "Log a hardware swap with the device provider", "power_cycle_printer": "Power cycle the store printer", "readd_printer_queue": "Remove and re-add the printer in the store queue", "check_printer_ip": "Confirm the printer kept its reserved IP address", "check_ap_status": "Check the store access point status in the network console", "restart_ap": "Restart the access point remotely", "forget_network": "Forget and rejoin the store Wi-Fi on the device", "provider_circuit_ticket": "Open a circuit ticket with the network provider", "check_hr_start_date": "Check the start date in the HR system", "trigger_provisioning": "Re-run account provisioning for the new hire", "assign_store_group": "Add the account to the store's access group", "check_mailbox_owner": "Confirm the mailbox owner approved access", "grant_mailbox": "Grant access to the shared mailbox", "tell_restart_outlook": "Tell the user to restart Outlook to see the mailbox", "check_vpn_client": "Check the VPN client version", "reinstall_vpn_profile": "Reinstall the VPN profile", "check_vpn_group": "Confirm the user is in the VPN access group", "old_vpn_client": "Restart the legacy VPN client service", "enroll_mdm": "Enroll the phone in device management", "add_mail_profile": "Add the work mail profile from the company portal app", "check_os_version": "Confirm the phone meets the minimum OS version", "check_audio_device": "Check the selected audio device in Teams", "update_teams": "Update the Teams client", "reset_teams_cache": "Clear the Teams cache", "check_disk_space": "Check free disk space", "check_startup_apps": "Disable unneeded startup apps", "run_hardware_diag": "Run the hardware diagnostic", "reimage_laptop": "Book a reimage with desktop support", "replace_battery": "Order a battery replacement", "pos_restart_register": "Restart the register", "pos_escalate_vendor": "Escalate to the point-of-sale vendor", "pay_check_reader": "Check the card reader connection", "pay_escalate_processor": "Escalate to the payment processor", "sec_quarantine": "Quarantine the reported email", "sec_escalate_soc": "Escalate to the security team", "escalate_payroll": "Send the punch to payroll because the pay period has closed", "replace_headset": "Order a replacement headset", "reregister_device": "Re-register a phone that was enrolled under an old account", "printer_provider_swap": "Log a printer swap with the device provider", "hr_record_fix": "Ask HR to correct the new hire's job code"}, "topics": [{"id": "password", "name": "Password reset"}, {"id": "mfa", "name": "Authenticator on a new phone"}, {"id": "schedule", "name": "Scheduling app sign-in"}, {"id": "timeclock", "name": "Missed timeclock punch"}, {"id": "scanner", "name": "Handheld scanner will not pair"}, {"id": "printer", "name": "Store printer offline"}, {"id": "wifi", "name": "Store Wi-Fi dropping"}, {"id": "newhire", "name": "New hire account not active"}, {"id": "mailbox", "name": "Shared mailbox access"}, {"id": "vpn", "name": "VPN will not connect"}, {"id": "mobilemail", "name": "Work email on a phone"}, {"id": "teams", "name": "No audio in Teams"}, {"id": "laptop", "name": "Laptop running slow"}, {"id": "pos", "name": "Register frozen"}, {"id": "cardreader", "name": "Card reader offline"}, {"id": "phish", "name": "Suspicious email reported"}], "views": {"before": {"topics": [{"id": "password", "name": "Password reset", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 0, "window": 50, "edited": 50, "no_draft": 0, "drafts": ["edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited"], "volume": 672, "volume_share": 0.112}, {"id": "mfa", "name": "Authenticator on a new phone", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 50, "window": 50, "edited": 0, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 378, "volume_share": 0.063}, {"id": "schedule", "name": "Scheduling app sign-in", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 0, "window": 50, "edited": 50, "no_draft": 0, "drafts": ["edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited"], "volume": 336, "volume_share": 0.056}, {"id": "timeclock", "name": "Missed timeclock punch", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 47, "window": 50, "edited": 3, "no_draft": 0, "drafts": ["approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "edited", "approved"], "volume": 294, "volume_share": 0.049}, {"id": "scanner", "name": "Handheld scanner will not pair", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 0, "window": 50, "edited": 50, "no_draft": 0, "drafts": ["edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited"], "volume": 252, "volume_share": 0.042}, {"id": "printer", "name": "Store printer offline", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 0, "window": 50, "edited": 0, "no_draft": 50, "drafts": ["none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"], "volume": 210, "volume_share": 0.035}, {"id": "wifi", "name": "Store Wi-Fi dropping", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 41, "window": 50, "edited": 9, "no_draft": 0, "drafts": ["approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved"], "volume": 210, "volume_share": 0.035}, {"id": "newhire", "name": "New hire account not active", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 0, "window": 50, "edited": 50, "no_draft": 0, "drafts": ["edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited"], "volume": 252, "volume_share": 0.042}, {"id": "mailbox", "name": "Shared mailbox access", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 50, "window": 50, "edited": 0, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "vpn", "name": "VPN will not connect", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 0, "window": 50, "edited": 50, "no_draft": 0, "drafts": ["edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited", "edited"], "volume": 168, "volume_share": 0.028}, {"id": "mobilemail", "name": "Work email on a phone", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 49, "window": 50, "edited": 1, "no_draft": 0, "drafts": ["edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "teams", "name": "No audio in Teams", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 47, "window": 50, "edited": 3, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 126, "volume_share": 0.021}, {"id": "laptop", "name": "Laptop running slow", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 32, "window": 50, "edited": 18, "no_draft": 0, "drafts": ["approved", "edited", "approved", "approved", "approved", "edited", "edited", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "edited", "approved", "edited", "edited", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "approved", "edited", "edited", "approved", "edited", "approved", "approved", "edited", "approved", "approved", "edited", "approved", "edited", "approved", "edited", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "pos", "name": "Register frozen", "verdict": "ALWAYS A PERSON", "excluded": "Point-of-sale outage", "approved": 0, "window": 0, "edited": 0, "no_draft": 0, "drafts": [], "volume": 462, "volume_share": 0.077}, {"id": "cardreader", "name": "Card reader offline", "verdict": "ALWAYS A PERSON", "excluded": "Payments", "approved": 0, "window": 0, "edited": 0, "no_draft": 0, "drafts": [], "volume": 252, "volume_share": 0.042}, {"id": "phish", "name": "Suspicious email reported", "verdict": "ALWAYS A PERSON", "excluded": "Security incident", "approved": 0, "window": 0, "edited": 0, "no_draft": 0, "drafts": [], "volume": 84, "volume_share": 0.014}], "cleared": 3, "cleared_share": 0.119, "volume_bar": 0.1, "meets_bar": true, "total_tickets": 6000, "coverage": {"accurate": 7, "of": 13}}, "after": {"topics": [{"id": "password", "name": "Password reset", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 50, "window": 50, "edited": 0, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 672, "volume_share": 0.112}, {"id": "mfa", "name": "Authenticator on a new phone", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 50, "window": 50, "edited": 0, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 378, "volume_share": 0.063}, {"id": "schedule", "name": "Scheduling app sign-in", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 49, "window": 50, "edited": 1, "no_draft": 0, "drafts": ["approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 336, "volume_share": 0.056}, {"id": "timeclock", "name": "Missed timeclock punch", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 47, "window": 50, "edited": 3, "no_draft": 0, "drafts": ["approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "edited", "approved"], "volume": 294, "volume_share": 0.049}, {"id": "scanner", "name": "Handheld scanner will not pair", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 44, "window": 50, "edited": 6, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved"], "volume": 252, "volume_share": 0.042}, {"id": "printer", "name": "Store printer offline", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 47, "window": 50, "edited": 3, "no_draft": 0, "drafts": ["approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 210, "volume_share": 0.035}, {"id": "wifi", "name": "Store Wi-Fi dropping", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 41, "window": 50, "edited": 9, "no_draft": 0, "drafts": ["approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved"], "volume": 210, "volume_share": 0.035}, {"id": "newhire", "name": "New hire account not active", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 47, "window": 50, "edited": 3, "no_draft": 0, "drafts": ["approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved"], "volume": 252, "volume_share": 0.042}, {"id": "mailbox", "name": "Shared mailbox access", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 50, "window": 50, "edited": 0, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "vpn", "name": "VPN will not connect", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 50, "window": 50, "edited": 0, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "mobilemail", "name": "Work email on a phone", "verdict": "AUTO-RESOLVE", "excluded": null, "approved": 49, "window": 50, "edited": 1, "no_draft": 0, "drafts": ["edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "teams", "name": "No audio in Teams", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 47, "window": 50, "edited": 3, "no_draft": 0, "drafts": ["approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved", "approved"], "volume": 126, "volume_share": 0.021}, {"id": "laptop", "name": "Laptop running slow", "verdict": "KEEP DRAFTING", "excluded": null, "approved": 32, "window": 50, "edited": 18, "no_draft": 0, "drafts": ["approved", "edited", "approved", "approved", "approved", "edited", "edited", "approved", "approved", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "approved", "approved", "edited", "approved", "edited", "edited", "approved", "edited", "approved", "approved", "approved", "approved", "approved", "edited", "edited", "approved", "edited", "edited", "approved", "edited", "approved", "approved", "edited", "approved", "approved", "edited", "approved", "edited", "approved", "edited", "approved", "approved", "approved"], "volume": 168, "volume_share": 0.028}, {"id": "pos", "name": "Register frozen", "verdict": "ALWAYS A PERSON", "excluded": "Point-of-sale outage", "approved": 0, "window": 0, "edited": 0, "no_draft": 0, "drafts": [], "volume": 462, "volume_share": 0.077}, {"id": "cardreader", "name": "Card reader offline", "verdict": "ALWAYS A PERSON", "excluded": "Payments", "approved": 0, "window": 0, "edited": 0, "no_draft": 0, "drafts": [], "volume": 252, "volume_share": 0.042}, {"id": "phish", "name": "Suspicious email reported", "verdict": "ALWAYS A PERSON", "excluded": "Security incident", "approved": 0, "window": 0, "edited": 0, "no_draft": 0, "drafts": [], "volume": 84, "volume_share": 0.014}], "cleared": 6, "cleared_share": 0.315, "volume_bar": 0.1, "meets_bar": true, "total_tickets": 6000, "coverage": {"accurate": 13, "of": 13}}}, "found": {"timeclock": {"tickets": 294, "provider_tickets": 188, "internal_tickets": 106, "has_article": true, "missing": [], "outdated": [], "occasional": [{"step": "escalate_payroll", "share": 0.065, "tickets": 19, "position": 1.0, "provider_notes": 13, "internal_notes": 6, "provider_rate": 0.069, "internal_rate": 0.057, "lives_in": "all notes"}], "step_share": {"manager_approval": 1.0, "add_punch_wfm": 1.0, "escalate_payroll": 0.065}}, "vpn": {"tickets": 168, "provider_tickets": 95, "internal_tickets": 73, "has_article": true, "missing": [{"step": "reinstall_vpn_profile", "share": 1.0, "tickets": 168, "position": 1.0, "provider_notes": 95, "internal_notes": 73, "provider_rate": 1.0, "internal_rate": 1.0, "lives_in": "all notes"}], "outdated": [{"step": "old_vpn_client", "share": 0.0, "tickets": 0}], "occasional": [], "step_share": {"check_vpn_group": 1.0, "reinstall_vpn_profile": 1.0, "check_vpn_client": 1.0}}, "teams": {"tickets": 126, "provider_tickets": 74, "internal_tickets": 52, "has_article": true, "missing": [], "outdated": [], "occasional": [{"step": "replace_headset", "share": 0.071, "tickets": 9, "position": 1.0, "provider_notes": 5, "internal_notes": 4, "provider_rate": 0.068, "internal_rate": 0.077, "lives_in": "all notes"}], "step_share": {"update_teams": 1.0, "check_audio_device": 1.0, "reset_teams_cache": 1.0, "replace_headset": 0.071}}, "password": {"tickets": 672, "provider_tickets": 380, "internal_tickets": 292, "has_article": true, "missing": [{"step": "tell_sync_wait", "share": 0.685, "tickets": 460, "position": 0.988, "provider_notes": 380, "internal_notes": 80, "provider_rate": 1.0, "internal_rate": 0.274, "lives_in": "provider notes"}], "outdated": [], "occasional": [{"step": "unlock_account", "share": 0.037, "tickets": 25, "position": 1.0, "provider_notes": 14, "internal_notes": 11, "provider_rate": 0.037, "internal_rate": 0.038, "lives_in": "all notes"}], "step_share": {"verify_identity": 1.0, "tell_sync_wait": 0.685, "reset_password_portal": 1.0, "unlock_account": 0.037}}, "printer": {"tickets": 210, "provider_tickets": 122, "internal_tickets": 88, "has_article": false, "missing": [{"step": "check_printer_ip", "share": 1.0, "tickets": 210, "position": 0.485, "provider_notes": 122, "internal_notes": 88, "provider_rate": 1.0, "internal_rate": 1.0, "lives_in": "all notes"}, {"step": "readd_printer_queue", "share": 1.0, "tickets": 210, "position": 0.97, "provider_notes": 122, "internal_notes": 88, "provider_rate": 1.0, "internal_rate": 1.0, "lives_in": "all notes"}, {"step": "power_cycle_printer", "share": 1.0, "tickets": 210, "position": 0.0, "provider_notes": 122, "internal_notes": 88, "provider_rate": 1.0, "internal_rate": 1.0, "lives_in": "all notes"}], "outdated": [], "occasional": [{"step": "printer_provider_swap", "share": 0.09, "tickets": 19, "position": 1.0, "provider_notes": 16, "internal_notes": 3, "provider_rate": 0.131, "internal_rate": 0.034, "lives_in": "provider notes"}], "step_share": {"check_printer_ip": 1.0, "readd_printer_queue": 1.0, "power_cycle_printer": 1.0, "printer_provider_swap": 0.09}}, "wifi": {"tickets": 210, "provider_tickets": 129, "internal_tickets": 81, "has_article": true, "missing": [], "outdated": [], "occasional": [{"step": "provider_circuit_ticket", "share": 0.167, "tickets": 35, "position": 1.0, "provider_notes": 20, "internal_notes": 15, "provider_rate": 0.155, "internal_rate": 0.185, "lives_in": "all notes"}], "step_share": {"check_ap_status": 1.0, "forget_network": 1.0, "restart_ap": 1.0, "provider_circuit_ticket": 0.167}}, "mfa": {"tickets": 378, "provider_tickets": 233, "internal_tickets": 145, "has_article": true, "missing": [], "outdated": [], "occasional": [], "step_share": {"verify_identity": 1.0, "confirm_mfa_signin": 1.0, "send_mfa_link": 1.0, "remove_old_mfa": 1.0}}, "cardreader": {"tickets": 252, "provider_tickets": 159, "internal_tickets": 93, "has_article": true, "missing": [], "outdated": [], "occasional": [], "step_share": {"pay_check_reader": 1.0, "pay_escalate_processor": 1.0}}, "pos": {"tickets": 462, "provider_tickets": 279, "internal_tickets": 183, "has_article": true, "missing": [], "outdated": [], "occasional": [], "step_share": {"pos_restart_register": 1.0, "pos_escalate_vendor": 1.0}}, "schedule": {"tickets": 336, "provider_tickets": 209, "internal_tickets": 127, "has_article": true, "missing": [{"step": "relink_store_id", "share": 0.69, "tickets": 232, "position": 0.492, "provider_notes": 209, "internal_notes": 23, "provider_rate": 1.0, "internal_rate": 0.181, "lives_in": "provider notes"}], "outdated": [], "occasional": [{"step": "unlock_account", "share": 0.048, "tickets": 16, "position": 1.0, "provider_notes": 9, "internal_notes": 7, "provider_rate": 0.043, "internal_rate": 0.055, "lives_in": "all notes"}], "step_share": {"check_schedule_license": 1.0, "relink_store_id": 0.69, "clear_app_cache": 1.0, "unlock_account": 0.048}}, "mailbox": {"tickets": 168, "provider_tickets": 96, "internal_tickets": 72, "has_article": true, "missing": [], "outdated": [], "occasional": [], "step_share": {"check_mailbox_owner": 1.0, "grant_mailbox": 1.0, "tell_restart_outlook": 1.0}}, "scanner": {"tickets": 252, "provider_tickets": 133, "internal_tickets": 119, "has_article": true, "missing": [{"step": "reset_scanner_profile", "share": 0.679, "tickets": 171, "position": 0.484, "provider_notes": 133, "internal_notes": 38, "provider_rate": 1.0, "internal_rate": 0.319, "lives_in": "provider notes"}], "outdated": [], "occasional": [{"step": "swap_scanner_provider", "share": 0.127, "tickets": 32, "position": 1.0, "provider_notes": 9, "internal_notes": 23, "provider_rate": 0.068, "internal_rate": 0.193, "lives_in": "all notes"}], "step_share": {"reboot_scanner": 1.0, "reset_scanner_profile": 0.679, "repair_bluetooth": 1.0, "swap_scanner_provider": 0.127}}, "newhire": {"tickets": 252, "provider_tickets": 137, "internal_tickets": 115, "has_article": true, "missing": [{"step": "assign_store_group", "share": 1.0, "tickets": 252, "position": 0.989, "provider_notes": 137, "internal_notes": 115, "provider_rate": 1.0, "internal_rate": 1.0, "lives_in": "all notes"}], "outdated": [], "occasional": [{"step": "hr_record_fix", "share": 0.032, "tickets": 8, "position": 1.0, "provider_notes": 6, "internal_notes": 2, "provider_rate": 0.044, "internal_rate": 0.017, "lives_in": "provider notes"}], "step_share": {"check_hr_start_date": 1.0, "trigger_provisioning": 1.0, "assign_store_group": 1.0, "hr_record_fix": 0.032}}, "laptop": {"tickets": 168, "provider_tickets": 102, "internal_tickets": 66, "has_article": true, "missing": [], "outdated": [], "occasional": [{"step": "run_hardware_diag", "share": 0.107, "tickets": 18, "position": 1.0, "provider_notes": 9, "internal_notes": 9, "provider_rate": 0.088, "internal_rate": 0.136, "lives_in": "all notes"}, {"step": "reimage_laptop", "share": 0.107, "tickets": 18, "position": 1.0, "provider_notes": 9, "internal_notes": 9, "provider_rate": 0.088, "internal_rate": 0.136, "lives_in": "all notes"}, {"step": "replace_battery", "share": 0.089, "tickets": 15, "position": 1.0, "provider_notes": 9, "internal_notes": 6, "provider_rate": 0.088, "internal_rate": 0.091, "lives_in": "all notes"}], "step_share": {"check_startup_apps": 1.0, "check_disk_space": 1.0, "replace_battery": 0.089, "run_hardware_diag": 0.107, "reimage_laptop": 0.107}}, "mobilemail": {"tickets": 168, "provider_tickets": 98, "internal_tickets": 70, "has_article": true, "missing": [], "outdated": [], "occasional": [{"step": "reregister_device", "share": 0.036, "tickets": 6, "position": 1.0, "provider_notes": 5, "internal_notes": 1, "provider_rate": 0.051, "internal_rate": 0.014, "lives_in": "provider notes"}], "step_share": {"enroll_mdm": 1.0, "check_os_version": 1.0, "add_mail_profile": 1.0, "reregister_device": 0.036}}, "phish": {"tickets": 84, "provider_tickets": 49, "internal_tickets": 35, "has_article": true, "missing": [], "outdated": [], "occasional": [], "step_share": {"sec_escalate_soc": 1.0, "sec_quarantine": 1.0}}}, "kb_before": {"password": ["verify_identity", "reset_password_portal"], "mfa": ["verify_identity", "remove_old_mfa", "send_mfa_link", "confirm_mfa_signin"], "schedule": ["check_schedule_license", "clear_app_cache"], "timeclock": ["manager_approval", "add_punch_wfm"], "scanner": ["reboot_scanner", "repair_bluetooth"], "printer": null, "wifi": ["check_ap_status", "restart_ap", "forget_network"], "newhire": ["check_hr_start_date", "trigger_provisioning"], "mailbox": ["check_mailbox_owner", "grant_mailbox", "tell_restart_outlook"], "vpn": ["check_vpn_group", "check_vpn_client", "old_vpn_client"], "mobilemail": ["check_os_version", "enroll_mdm", "add_mail_profile"], "teams": ["check_audio_device", "update_teams", "reset_teams_cache"], "laptop": ["check_disk_space", "check_startup_apps"], "pos": ["pos_restart_register", "pos_escalate_vendor"], "cardreader": ["pay_check_reader", "pay_escalate_processor"], "phish": ["sec_quarantine", "sec_escalate_soc"]}, "kb_after": {"password": ["verify_identity", "reset_password_portal", "tell_sync_wait"], "mfa": ["verify_identity", "remove_old_mfa", "send_mfa_link", "confirm_mfa_signin"], "schedule": ["check_schedule_license", "clear_app_cache", "relink_store_id"], "timeclock": ["manager_approval", "add_punch_wfm"], "scanner": ["reboot_scanner", "repair_bluetooth", "reset_scanner_profile"], "printer": ["power_cycle_printer", "check_printer_ip", "readd_printer_queue"], "wifi": ["check_ap_status", "restart_ap", "forget_network"], "newhire": ["check_hr_start_date", "trigger_provisioning", "assign_store_group"], "mailbox": ["check_mailbox_owner", "grant_mailbox", "tell_restart_outlook"], "vpn": ["check_vpn_group", "check_vpn_client", "reinstall_vpn_profile"], "mobilemail": ["check_os_version", "enroll_mdm", "add_mail_profile"], "teams": ["check_audio_device", "update_teams", "reset_teams_cache"], "laptop": ["check_disk_space", "check_startup_apps"], "pos": ["pos_restart_register", "pos_escalate_vendor"], "cardreader": ["pay_check_reader", "pay_escalate_processor"], "phish": ["sec_quarantine", "sec_escalate_soc"]}, "rules": {"gate_pass": 48, "gate_window": 50, "add_at": 0.4, "stale_below": 0.05}};
+let view = "before", sel = null;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cls = v => v.replace(/ /g,"-");
+const pct = (x,d=1) => (x*100).toFixed(d).replace(/\.0$/,"")+"%";
+const ORDER = ["AUTO-RESOLVE","KEEP DRAFTING","ALWAYS A PERSON"];
+const MEANS = {"AUTO-RESOLVE":"48 or more of the last 50 drafts approved with no edits","KEEP DRAFTING":"an analyst approves every draft","ALWAYS A PERSON":"point of sale, payments, security"};
+const BADGE = {"AUTO-RESOLVE":"go","KEEP DRAFTING":"partial","ALWAYS A PERSON":"no-go"};
+const CAPS = {before:"Drafts come from the knowledge base as it is today.",
+              after:"Drafts come from the knowledge base once the desk lead approves every update on the gap list."};
+const L = D.steps, NAMES = Object.fromEntries(D.topics.map(t=>[t.id,t.name]));
+const seg = [...document.querySelectorAll(".seg button")];
+function show(v){
+  view=v;
+  seg.forEach(b=>{const on=b.dataset.v==v; b.setAttribute("aria-checked",String(on)); b.tabIndex=on?0:-1;});
+  render();
+}
+seg.forEach((b,i)=>{
+  b.addEventListener("click",()=>show(b.dataset.v));
+  b.addEventListener("keydown",e=>{
+    if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key))return;
+    e.preventDefault(); const n=seg[(i+1)%seg.length]; show(n.dataset.v); n.focus();
+  });
+});
+function render(){
+  const V=D.views[view], ts=V.topics, other=D.views[view=="before"?"after":"before"].topics;
+  const cnt={}; ORDER.forEach(k=>cnt[k]=ts.filter(x=>x.verdict==k).length);
+  const drafted=ts.filter(t=>!t.excluded).length;
+  document.getElementById("cap").textContent=CAPS[view];
+  document.getElementById("verdict-h").textContent=`${V.cleared} of ${drafted} topics can answer on their own`;
+  document.getElementById("sharev").textContent=pct(V.cleared_share);
+  const near=ts.filter(t=>t.verdict=="KEEP DRAFTING"&&t.approved==D.rules.gate_pass-1);
+  document.getElementById("takeaway").innerHTML = view=="before"
+    ? `<b>${V.coverage.of-V.coverage.accurate} of ${V.coverage.of} drafted topics have an article that is missing a step, has an outdated one, or does not exist</b>, so their drafts get edited and they stay with an analyst. The day 30 bar is ${pct(V.volume_bar,0)} of tickets on cleared topics.`
+    : `<b>Every drafted topic now has an accurate article</b>, and ${V.cleared} topics clear the gate. ${near.length} more (${near.map(t=>esc(t.name)).join(", ")}) miss it by a single draft and stay with an analyst, because some of their tickets need a one-off step no article should promise.`;
+  const total=V.total_tickets, tail=total-ts.reduce((a,t)=>a+t.volume,0);
+  document.getElementById("stack").innerHTML=ORDER.flatMap(k=>ts.filter(t=>t.verdict==k).map(t=>`<i class="k-${cls(k)}" style="flex-grow:${t.volume}" title="${esc(t.name)}"></i>`)).join("")+`<i class="k-LONG-TAIL" style="flex-grow:${tail}" title="One-off tickets"></i>`;
+  document.getElementById("counts").innerHTML=ORDER.map(k=>`<div class="${cnt[k]?"":"zero"}"><b>${cnt[k]}</b><span class="lab"><i class="k-${cls(k)}"></i>${k}</span><span>${MEANS[k]}</span></div>`).join("");
+  document.getElementById("tiles").innerHTML=ts.map(t=>{
+    const was=other.find(o=>o.id==t.id).verdict, changed=view=="after"&&was!=t.verdict;
+    return `<button type="button" class="tile t-${cls(t.verdict)}${changed?" changed":""}" data-t="${t.id}" aria-expanded="${sel==t.id}" aria-controls="detail">
+      <span class="badge ${BADGE[t.verdict]}">${t.verdict}</span>
+      <span class="name">${esc(t.name)}</span>
+      <span class="nums">${t.excluded?`<span><b>${pct(t.volume_share)}</b>of tickets</span>`:`<span><b>${t.approved}</b>of ${t.window} approved</span><span><b>${pct(t.volume_share)}</b>of tickets</span>`}</span>
+    </button>`;}).join("");
+  document.querySelectorAll("button.tile").forEach(b=>b.addEventListener("click",()=>pick(b.dataset.t)));
+  const det=document.getElementById("detail");
+  if(!sel){det.innerHTML=`<p class="hint">Select a topic to see its last 50 drafts and what the gap finder changed in its article.</p>`;return;}
+  const t=ts.find(x=>x.id==sel), f=D.found[sel]||{missing:[],outdated:[],occasional:[]}, art=(view=="before"?D.kb_before:D.kb_after)[sel];
+  let h=`<h3>${esc(t.name)}</h3>`;
+  if(t.excluded){
+    h+=`<p class="hint">${esc(t.excluded)}. Never answered automatically, so no gate applies. Select the topic again to close.</p>`;
+  } else {
+    const ap=t.drafts.filter(x=>x=="approved").length;
+    h+=`<p class="hint">${ap} of ${t.window} drafts approved with no edits; the gate needs 48. Select the topic again to close.</p>
+      <div class="strip" role="img" aria-label="${ap} approved, ${t.edited} edited, ${t.no_draft} with no draft">${t.drafts.map(x=>`<i class="cell ${x}"></i>`).join("")}</div>
+      <div class="dl"><span><i class="approved"></i>Approved, no edits</span><span><i class="edited"></i>Edited by the analyst</span><span><i class="none"></i>No article, no draft</span></div>`;
+  }
+  const rows=[];
+  (art||[]).forEach(s=>{
+    const added=view=="after"&&f.missing.some(m=>m.step==s);
+    rows.push(`<li><span class="tag ${added?"add":""}">${added?"ADDED":"IN ARTICLE"}</span><span>${esc(L[s])}${added?`<span class="why">Found in ${pct(f.missing.find(m=>m.step==s).share,0)} of this topic's notes.</span>`:""}</span></li>`);
+  });
+  if(view=="before") f.missing.forEach(m=>rows.push(`<li><span class="tag add">MISSING</span><span>${esc(L[m.step])}<span class="why">In ${pct(m.share,0)} of this topic's notes (${pct(m.provider_rate,0)} of provider notes, ${pct(m.internal_rate,0)} of internal notes).</span></span></li>`));
+  f.outdated.forEach(o=>rows.push(`<li><span class="tag remove">${view=="before"?"OUTDATED":"REMOVED"}</span><span>${esc(L[o.step])}<span class="why">In the article but in ${pct(o.share,0)} of the notes.</span></span></li>`));
+  f.occasional.forEach(o=>rows.push(`<li><span class="tag once">ONE-OFF</span><span>${esc(L[o.step])}<span class="why">In ${pct(o.share,0)} of the notes. Kept as an escalation path, not added to the default answer.</span></span></li>`));
+  if(!art&&view=="before") h+=`<p class="hint" style="margin-top:8px">No article exists for this topic today.</p>`;
+  det.innerHTML=h+`<ul class="steps">${rows.join("")}</ul>`;
+}
+function pick(t){sel = sel==t?null:t; render(); const b=document.querySelector(`button.tile[data-t="${t}"]`); b&&b.focus();}
+
+// Where the missing fixes live: provider-note rate vs internal-note rate for every missing step, drawn to scale.
+const CROWS=[]; Object.entries(D.found).forEach(([tid,f])=>f.missing.forEach(m=>CROWS.push({...m,topic:tid})));
+CROWS.sort((a,b)=>(b.provider_rate-b.internal_rate)-(a.provider_rate-a.internal_rate));
+function wrap(t,n){const w=t.split(" "),o=[];let l="";w.forEach(x=>{if((l+" "+x).trim().length>n&&l){o.push(l);l=x}else l=(l+" "+x).trim()});o.push(l);return o;}
+function drawChart(){
+  const box=document.getElementById("chart"), W=Math.max(280,Math.round(box.clientWidth-(innerWidth<700?24:40)));
+  const narrow=W<560, left=narrow?8:Math.min(300,Math.round(W*.42)), right=narrow?62:70, top=26, x=v=>left+v*(W-left-right);
+  let y=top, body="";
+  CROWS.forEach(r=>{
+    const lines=wrap(L[r.step],narrow?Math.floor(W/7.2):Math.floor((left-16)/6.6));
+    const lh=16, textH=lines.length*lh+15, rowH=narrow?textH+26:Math.max(textH,30)+14;
+    const by=narrow?y+textH+12:y+rowH/2-4;
+    body+=`<text class="sub" x="0" y="${y+11}">${esc(NAMES[r.topic])}</text>`;
+    lines.forEach((l,i)=>body+=`<text class="lbl" x="0" y="${y+28+i*lh}">${esc(l)}</text>`);
+    const lo=Math.min(r.provider_rate,r.internal_rate), hi=Math.max(r.provider_rate,r.internal_rate);
+    body+=`<line class="bar" x1="${x(lo)}" x2="${x(hi)}" y1="${by}" y2="${by}"/>`;
+    body+=`<circle class="id" cx="${x(r.internal_rate)}" cy="${by}" r="6"><title>Internal notes ${pct(r.internal_rate,0)}</title></circle>`;
+    body+=`<circle class="pd" cx="${x(r.provider_rate)}" cy="${by}" r="${hi==lo?4:6}"><title>Provider notes ${pct(r.provider_rate,0)}</title></circle>`;
+    const d=Math.round((r.provider_rate-r.internal_rate)*100);
+    body+=`<text class="gap" x="${x(hi)+12}" y="${by+4}">${d>0?"+"+d+" pts":"same"}</text>`;
+    body+=`<line class="grid" x1="0" x2="${W}" y1="${y+rowH-2}" y2="${y+rowH-2}"/>`;
+    y+=rowH;
+  });
+  let grid="";[0,.25,.5,.75,1].forEach(v=>{grid+=`<line class="grid" x1="${x(v)}" x2="${x(v)}" y1="${top-6}" y2="${y}"/><text class="sub" x="${x(v)}" y="${top-12}" text-anchor="middle">${v*100}%</text>`;});
+  box.innerHTML=`<svg viewBox="0 0 ${W} ${y+6}" width="${W}" height="${y+6}" role="img" aria-label="Share of provider and internal notes that mention each missing step">${grid}${body}</svg><div class="ckey"><span><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="var(--ink)"/></svg>Provider notes</span><span><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="4.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/></svg>Internal notes</span><span>Share of the topic's notes that mention the step</span></div>`;
+}
+drawChart(); let rz; addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(drawChart,150)});
+(function(){
+  const rows=CROWS, prov=rows.filter(r=>r.lives_in=="provider notes");
+  document.getElementById("wherept").innerHTML=`The gap finder found <b>${rows.length} steps the articles were missing</b>. ${prov.length} of them (${prov.map(r=>esc(NAMES[r.topic])).join(", ")}) are written down almost only by the outside provider, and those topics carry ${pct(prov.reduce((a,r)=>a+D.views.before.topics.find(t=>t.id==r.topic).volume_share,0))} of all tickets.`;
+})();
+
+(function(){
+  const items=Object.entries(D.found).filter(([,f])=>f.missing.length||f.outdated.length);
+  const n=items.reduce((a,[,f])=>a+f.missing.length+f.outdated.length,0);
+  document.getElementById("gapspt").innerHTML=`${n} updates across ${items.length} topics. Each one is a suggestion the desk lead approves or rejects; the desk lead owns every approved update, so the knowledge stays with the company if the provider changes.`;
+  document.getElementById("gaplist").innerHTML=items.map(([tid,f])=>`<div class="gt"><h3>${esc(NAMES[tid])}</h3><ul>${
+    (f.has_article?"":`<li><span class="tag add">NEW</span><span>No article today; the steps below become one.</span></li>`)+
+    f.missing.map(m=>`<li><span class="tag add">ADD</span><span>${esc(L[m.step])}<span class="why">In ${pct(m.share,0)} of notes; ${m.lives_in=="provider notes"?"written down almost only by the provider":"written down by both teams"}.</span></span></li>`).join("")+
+    f.outdated.map(o=>`<li><span class="tag remove">REMOVE</span><span>${esc(L[o.step])}<span class="why">In the article but in ${pct(o.share,0)} of notes.</span></span></li>`).join("")
+  }</ul></div>`).join("");
+  const R=D.rules;
+  document.getElementById("rulecards").innerHTML=[
+    ["Add a step",`A step that is not in the article but appears in at least ${pct(R.add_at,0)} of the topic's notes.`],
+    ["Remove a step",`A step in the article that appears in fewer than ${pct(R.stale_below,0)} of the notes.`],
+    ["Answer on its own",`At least ${R.gate_pass} of the topic's last ${R.gate_window} drafts approved with no edits, and the topic is not excluded.`]
+  ].map(r=>`<div><h3>${r[0]}</h3><p>${r[1]}</p></div>`).join("");
+})();
+render();
+</script>
+<!-- demo-chrome --><footer class="demo-foot"><span>A working build by <a href="https://pranavgudise.dev/">Pranav Gudise</a>. Synthetic or public data only.</span><a href="https://github.com/pg2342-hub/service-desk-gap-finder">github.com/pg2342-hub/service-desk-gap-finder</a></footer><!-- /demo-chrome -->
+</body>
+</html>

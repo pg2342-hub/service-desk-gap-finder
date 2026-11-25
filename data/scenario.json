@@ -1,0 +1,369 @@
+{
+ "_about": "A made-up employee IT service desk for a fictional retail company with stores and a corporate office. Each topic lists the steps that actually close its tickets (true_steps), what the current knowledge base article says (article_steps, null when there is no article), which notes the missing steps show up in (provider or internal), how often a ticket needs an extra one-off step (variant_rate), and its share of ticket volume (weight). Nothing here describes a real company. About 30% of tickets fall outside the named topics (one-off issues); they are counted in volume but never drafted.",
+ "seed": 20261125,
+ "history_tickets": 6000,
+ "pilot_tickets_per_topic": 50,
+ "excluded_reasons": {
+  "pos": "Point-of-sale outage",
+  "payments": "Payments",
+  "security": "Security incident"
+ },
+ "steps": {
+  "verify_identity": "Verify the associate's identity with employee ID and store number",
+  "reset_password_portal": "Reset the password in the self-service portal",
+  "unlock_account": "Unlock the account in the directory",
+  "tell_sync_wait": "Tell the associate to wait 15 minutes for the store devices to sync",
+  "old_sms_reset": "Send a reset code by SMS from the old reset tool",
+  "remove_old_mfa": "Remove the old authenticator registration",
+  "send_mfa_link": "Send a new authenticator enrollment link",
+  "confirm_mfa_signin": "Confirm a test sign-in with the new phone",
+  "check_schedule_license": "Check the associate has a scheduling app license",
+  "clear_app_cache": "Clear the scheduling app cache on the phone",
+  "relink_store_id": "Relink the associate to their home store ID",
+  "manager_approval": "Ask the store manager to approve the missed punch",
+  "add_punch_wfm": "Add the punch in the workforce system",
+  "reboot_scanner": "Reboot the handheld scanner",
+  "repair_bluetooth": "Remove and re-pair the scanner in Bluetooth settings",
+  "reset_scanner_profile": "Reset the scanner to the store profile by scanning the setup barcode",
+  "swap_scanner_provider": "Log a hardware swap with the device provider",
+  "power_cycle_printer": "Power cycle the store printer",
+  "readd_printer_queue": "Remove and re-add the printer in the store queue",
+  "check_printer_ip": "Confirm the printer kept its reserved IP address",
+  "check_ap_status": "Check the store access point status in the network console",
+  "restart_ap": "Restart the access point remotely",
+  "forget_network": "Forget and rejoin the store Wi-Fi on the device",
+  "provider_circuit_ticket": "Open a circuit ticket with the network provider",
+  "check_hr_start_date": "Check the start date in the HR system",
+  "trigger_provisioning": "Re-run account provisioning for the new hire",
+  "assign_store_group": "Add the account to the store's access group",
+  "check_mailbox_owner": "Confirm the mailbox owner approved access",
+  "grant_mailbox": "Grant access to the shared mailbox",
+  "tell_restart_outlook": "Tell the user to restart Outlook to see the mailbox",
+  "check_vpn_client": "Check the VPN client version",
+  "reinstall_vpn_profile": "Reinstall the VPN profile",
+  "check_vpn_group": "Confirm the user is in the VPN access group",
+  "old_vpn_client": "Restart the legacy VPN client service",
+  "enroll_mdm": "Enroll the phone in device management",
+  "add_mail_profile": "Add the work mail profile from the company portal app",
+  "check_os_version": "Confirm the phone meets the minimum OS version",
+  "check_audio_device": "Check the selected audio device in Teams",
+  "update_teams": "Update the Teams client",
+  "reset_teams_cache": "Clear the Teams cache",
+  "check_disk_space": "Check free disk space",
+  "check_startup_apps": "Disable unneeded startup apps",
+  "run_hardware_diag": "Run the hardware diagnostic",
+  "reimage_laptop": "Book a reimage with desktop support",
+  "replace_battery": "Order a battery replacement",
+  "pos_restart_register": "Restart the register",
+  "pos_escalate_vendor": "Escalate to the point-of-sale vendor",
+  "pay_check_reader": "Check the card reader connection",
+  "pay_escalate_processor": "Escalate to the payment processor",
+  "sec_quarantine": "Quarantine the reported email",
+  "sec_escalate_soc": "Escalate to the security team",
+  "escalate_payroll": "Send the punch to payroll because the pay period has closed",
+  "replace_headset": "Order a replacement headset",
+  "reregister_device": "Re-register a phone that was enrolled under an old account",
+  "printer_provider_swap": "Log a printer swap with the device provider",
+  "hr_record_fix": "Ask HR to correct the new hire's job code"
+ },
+ "topics": [
+  {
+   "id": "password",
+   "name": "Password reset",
+   "weight": 0.112,
+   "true_steps": [
+    "verify_identity",
+    "reset_password_portal",
+    "tell_sync_wait"
+   ],
+   "article_steps": [
+    "verify_identity",
+    "reset_password_portal"
+   ],
+   "missing_from": "provider",
+   "variant_steps": [
+    "unlock_account"
+   ],
+   "variant_rate": 0.03
+  },
+  {
+   "id": "mfa",
+   "name": "Authenticator on a new phone",
+   "weight": 0.063,
+   "true_steps": [
+    "verify_identity",
+    "remove_old_mfa",
+    "send_mfa_link",
+    "confirm_mfa_signin"
+   ],
+   "article_steps": [
+    "verify_identity",
+    "remove_old_mfa",
+    "send_mfa_link",
+    "confirm_mfa_signin"
+   ],
+   "missing_from": null,
+   "variant_steps": [],
+   "variant_rate": 0.0
+  },
+  {
+   "id": "schedule",
+   "name": "Scheduling app sign-in",
+   "weight": 0.056,
+   "true_steps": [
+    "check_schedule_license",
+    "relink_store_id",
+    "clear_app_cache"
+   ],
+   "article_steps": [
+    "check_schedule_license",
+    "clear_app_cache"
+   ],
+   "missing_from": "provider",
+   "variant_steps": [
+    "unlock_account"
+   ],
+   "variant_rate": 0.04
+  },
+  {
+   "id": "timeclock",
+   "name": "Missed timeclock punch",
+   "weight": 0.049,
+   "true_steps": [
+    "manager_approval",
+    "add_punch_wfm"
+   ],
+   "article_steps": [
+    "manager_approval",
+    "add_punch_wfm"
+   ],
+   "missing_from": null,
+   "variant_steps": [
+    "escalate_payroll"
+   ],
+   "variant_rate": 0.06
+  },
+  {
+   "id": "scanner",
+   "name": "Handheld scanner will not pair",
+   "weight": 0.042,
+   "true_steps": [
+    "reboot_scanner",
+    "reset_scanner_profile",
+    "repair_bluetooth"
+   ],
+   "article_steps": [
+    "reboot_scanner",
+    "repair_bluetooth"
+   ],
+   "missing_from": "provider",
+   "variant_steps": [
+    "swap_scanner_provider"
+   ],
+   "variant_rate": 0.12
+  },
+  {
+   "id": "printer",
+   "name": "Store printer offline",
+   "weight": 0.035,
+   "true_steps": [
+    "power_cycle_printer",
+    "check_printer_ip",
+    "readd_printer_queue"
+   ],
+   "article_steps": null,
+   "missing_from": "internal",
+   "variant_steps": [
+    "printer_provider_swap"
+   ],
+   "variant_rate": 0.07
+  },
+  {
+   "id": "wifi",
+   "name": "Store Wi-Fi dropping",
+   "weight": 0.035,
+   "true_steps": [
+    "check_ap_status",
+    "restart_ap",
+    "forget_network"
+   ],
+   "article_steps": [
+    "check_ap_status",
+    "restart_ap",
+    "forget_network"
+   ],
+   "missing_from": null,
+   "variant_steps": [
+    "provider_circuit_ticket"
+   ],
+   "variant_rate": 0.18
+  },
+  {
+   "id": "newhire",
+   "name": "New hire account not active",
+   "weight": 0.042,
+   "true_steps": [
+    "check_hr_start_date",
+    "trigger_provisioning",
+    "assign_store_group"
+   ],
+   "article_steps": [
+    "check_hr_start_date",
+    "trigger_provisioning"
+   ],
+   "missing_from": "internal",
+   "variant_steps": [
+    "hr_record_fix"
+   ],
+   "variant_rate": 0.03
+  },
+  {
+   "id": "mailbox",
+   "name": "Shared mailbox access",
+   "weight": 0.028,
+   "true_steps": [
+    "check_mailbox_owner",
+    "grant_mailbox",
+    "tell_restart_outlook"
+   ],
+   "article_steps": [
+    "check_mailbox_owner",
+    "grant_mailbox",
+    "tell_restart_outlook"
+   ],
+   "missing_from": null,
+   "variant_steps": [],
+   "variant_rate": 0.0
+  },
+  {
+   "id": "vpn",
+   "name": "VPN will not connect",
+   "weight": 0.028,
+   "true_steps": [
+    "check_vpn_group",
+    "check_vpn_client",
+    "reinstall_vpn_profile"
+   ],
+   "article_steps": [
+    "check_vpn_group",
+    "check_vpn_client",
+    "old_vpn_client"
+   ],
+   "missing_from": "internal",
+   "variant_steps": [],
+   "variant_rate": 0.0
+  },
+  {
+   "id": "mobilemail",
+   "name": "Work email on a phone",
+   "weight": 0.028,
+   "true_steps": [
+    "check_os_version",
+    "enroll_mdm",
+    "add_mail_profile"
+   ],
+   "article_steps": [
+    "check_os_version",
+    "enroll_mdm",
+    "add_mail_profile"
+   ],
+   "missing_from": null,
+   "variant_steps": [
+    "reregister_device"
+   ],
+   "variant_rate": 0.04
+  },
+  {
+   "id": "teams",
+   "name": "No audio in Teams",
+   "weight": 0.021,
+   "true_steps": [
+    "check_audio_device",
+    "update_teams",
+    "reset_teams_cache"
+   ],
+   "article_steps": [
+    "check_audio_device",
+    "update_teams",
+    "reset_teams_cache"
+   ],
+   "missing_from": null,
+   "variant_steps": [
+    "replace_headset"
+   ],
+   "variant_rate": 0.1
+  },
+  {
+   "id": "laptop",
+   "name": "Laptop running slow",
+   "weight": 0.028,
+   "true_steps": [
+    "check_disk_space",
+    "check_startup_apps"
+   ],
+   "article_steps": [
+    "check_disk_space",
+    "check_startup_apps"
+   ],
+   "missing_from": null,
+   "variant_steps": [
+    "run_hardware_diag",
+    "reimage_laptop",
+    "replace_battery"
+   ],
+   "variant_rate": 0.35
+  },
+  {
+   "id": "pos",
+   "name": "Register frozen",
+   "weight": 0.077,
+   "excluded": "pos",
+   "true_steps": [
+    "pos_restart_register",
+    "pos_escalate_vendor"
+   ],
+   "article_steps": [
+    "pos_restart_register",
+    "pos_escalate_vendor"
+   ],
+   "missing_from": null,
+   "variant_steps": [],
+   "variant_rate": 0.0
+  },
+  {
+   "id": "cardreader",
+   "name": "Card reader offline",
+   "weight": 0.042,
+   "excluded": "payments",
+   "true_steps": [
+    "pay_check_reader",
+    "pay_escalate_processor"
+   ],
+   "article_steps": [
+    "pay_check_reader",
+    "pay_escalate_processor"
+   ],
+   "missing_from": null,
+   "variant_steps": [],
+   "variant_rate": 0.0
+  },
+  {
+   "id": "phish",
+   "name": "Suspicious email reported",
+   "weight": 0.014,
+   "excluded": "security",
+   "true_steps": [
+    "sec_quarantine",
+    "sec_escalate_soc"
+   ],
+   "article_steps": [
+    "sec_quarantine",
+    "sec_escalate_soc"
+   ],
+   "missing_from": null,
+   "variant_steps": [],
+   "variant_rate": 0.0
+  }
+ ],
+ "long_tail_share": 0.3
+}
